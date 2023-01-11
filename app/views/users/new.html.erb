@@ -1,19 +1,25 @@
 <br />
 <br />
 <br />
-<h1>Sign Up</h1>
-<form class="px-4 py-3">
+<h1 style="text-align: center">Sign Up</h1>
+
+<%= form_with model: @user, url: signup_path, local: true do |signup| %>
+    <%= render 'shared/error_messages' %>
     <div class="mb-3">
-        <label for="exampleDropdownFormEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+         <%= signup.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.text_field :name, class: "form-control", placeholder: "ABCD" %>
     </div>
     <div class="mb-3">
-        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+         <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
     </div>
     <div class="mb-3">
-        <label for="exampleDropdownFormPassword1" class="form-label">Password Confirmation</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password Confirmation">
+        <%= signup.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
     </div>
-    <button type="submit" class="btn btn-primary">Sign Up</button>
-</form>
+    <div class="mb-3">
+        <%= signup.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    </div>
+    <%= signup.submit "Sign Up", class: "btn btn-success"  %>
+<% end %>
