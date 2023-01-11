@@ -1,15 +1,16 @@
 <br />
 <br />
 <br />
-<h1>Sign In</h1>
-<form class="px-4 py-3">
+<h1 style="text-align: center">Sign In</h1>
+
+<%= form_with url: signin_path, scope: :session, local: true, class: "px-4 py-3" do |signin| %>
     <div class="mb-3">
-        <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+        <%= signin.label :email, for: "exampleDropdownFormEmail1", class: "form-label" %>
+        <%= signin.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
     </div>
     <div class="mb-3">
-        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+        <%= signin.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signin.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
     </div>
     <div class="mb-3">
         <div class="form-check">
@@ -19,8 +20,8 @@
             </label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Sign In</button>
-</form>
+    <%= signin.submit "Sign In", class: "btn btn-success" %>
+<% end %>
 <div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">New around here? Sign up</a>
+<%= link_to "New around here? Sign up", signup_path, class: "dropdown-item"%>
 <a class="dropdown-item" href="#">Forgot password?</a>
