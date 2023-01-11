@@ -105,7 +105,6 @@ end
 
 group :development, :test do
   gem "byebug", "~> 11.1", ">= 11.1.3"
-  # gem "sqlite3", "~> 1.4"
 end
 
 group :development do
