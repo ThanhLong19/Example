@@ -196,6 +196,7 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     msgpack (1.6.0)
+    mysql2 (0.5.3)
     nenv (0.3.0)
     net-imap (0.3.4)
       date
@@ -336,7 +337,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -403,6 +403,7 @@ DEPENDENCIES
   mini_magick (~> 4.12)
   minitest (~> 5.16, >= 5.16.3)
   minitest-reporters (~> 1.5)
+  mysql2 (= 0.5.3)
   pg (~> 1.4, >= 1.4.5)
   puma (~> 5.0)
   rails (~> 7.0.4)
@@ -417,7 +418,6 @@ DEPENDENCIES
   spring (~> 4.1)
   spring-watcher-listen (~> 2.1)
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   turbolinks (~> 5.2, >= 5.2.1)
