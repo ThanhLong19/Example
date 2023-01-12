@@ -1,0 +1,25 @@
+<br />
+<br />
+<br />
+<h1 style="text-align: center">Update Your Profile</h1>
+
+<%= form_with model: @user, local: true do |edit| %>
+    <%= render 'shared/error_messages' %>
+    <div class="mb-3">
+         <%= edit.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.text_field :name, class: "form-control", placeholder: "ABCD" %>
+    </div>
+    <div class="mb-3">
+         <%= edit.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
+    </div>
+    <div class="mb-3">
+        <%= edit.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+    </div>
+    <div class="mb-3">
+        <%= edit.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    </div>
+    <%= edit.submit "Save Changes", class: "btn btn-success"  %>
+<% end %>

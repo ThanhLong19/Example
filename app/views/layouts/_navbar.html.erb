@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <%= link_to "Profile", current_user,class: "nav-link" %>
                 </li>
+                <li class="nav-item">
+                    <%= link_to "Reset Password", edit_password_path,class: "nav-link" %>
+                </li>
             <% end %>
             </ul>
                 <form class="d-flex">
@@ -24,7 +27,6 @@
                   <%= button_to "Sign In", signin_path, method: :get, class: "btn btn-success" %>
             <% else %>
                 <!-- Default dropstart button -->
-
                 <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-success" %>
             <% end %>
         </div>

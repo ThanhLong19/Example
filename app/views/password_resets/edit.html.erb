@@ -1,0 +1,16 @@
+<br />
+<br />
+<br />
+<h1 style="text-align: center">Reset Password</h1>
+
+<%= form_with model: @user, url: edit_password_path, local: true do |edit| %>
+    <div class="mb-3">
+        <%= edit.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+    </div>
+    <div class="mb-3">
+        <%= edit.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    </div>
+    <%= edit.submit "Save Changes", class: "btn btn-success"  %>
+<% end %>
