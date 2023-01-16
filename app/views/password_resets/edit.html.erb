@@ -1,27 +1,22 @@
-<br />
-<br />
-<br />
-<h1 style="text-align: center">Reset Password</h1>
+<h1 class="title_h1">Reset Password</h1>
 
 <%= form_with model: @user, url: password_reset_edit_path(token: params[:token]), class: "px-4 py-3" do |reset| %>
-
-    <% if reset.object.errors.any? %>
-        <div class="alert alert-danger">
-            <% reset.object.errors.full_messages.each do |message| %>
-                <div>
-                    <%= message %>
-                </div>
-            <% end %>
+  <% if reset.object.errors.any? %>
+    <div class="alert alert-danger">
+      <% reset.object.errors.full_messages.each do |message| %>
+        <div>
+          <%= message %>
         </div>
-    <% end %>
-
-    <div class="mb-3">
-        <%= reset.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= reset.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+      <% end %>
     </div>
-    <div class="mb-3">
-        <%= reset.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= reset.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
-    </div>
-    <%= reset.submit "Save Changes", class: "btn btn-success" %>
+  <% end %>
+  <div class="mb-3">
+    <%= reset.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= reset.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+  </div>
+  <div class="mb-3">
+    <%= reset.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= reset.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+  </div>
+  <%= reset.submit "Save Changes", class: "btn btn-success" %>
 <% end %>

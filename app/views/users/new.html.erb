@@ -1,24 +1,21 @@
-<br />
-<br />
-<br />
-<h1 style="text-align: center">Sign Up</h1>
+<h1 class="title_h1">Sign Up</h1>
 
 <%= form_with model: @user, url: signup_path, local: true do |signup| %>
-    <div class="mb-3">
-        <%= signup.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.text_field :name, class: "form-control", placeholder: "Cristiano Ronaldo" %>
-    </div>
-    <div class="mb-3">
-        <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
-    </div>
-    <div class="mb-3">
-        <%= signup.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
-    </div>
-    <div class="mb-3">
-        <%= signup.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
-    </div>
-    <%= signup.submit "Sign Up", class: "btn btn-success"  %>
+  <div class="mb-3">
+    <%= signup.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.text_field :name, class: "form-control", placeholder: "Cristiano Ronaldo" %>
+  </div>
+  <div class="mb-3">
+    <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
+  </div>
+  <div class="mb-3">
+    <%= signup.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+  </div>
+  <div class="mb-3">
+    <%= signup.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+  </div>
+  <%= signup.submit "Sign Up", class: "btn btn-success"  %>
 <% end %>
