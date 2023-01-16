@@ -6,7 +6,7 @@
 <table>
     <tr>
         <th>Name: </th>
-        <td><%= @user.name%></td>
+        <td><%= @user.name %></td>
     </tr>
     <tr>
         <th>Email: </th>
@@ -14,4 +14,4 @@
     </tr>
 </table>
 <br/>
-<%= link_to "Update Profile", edit_user_path(current_user), class: "btn btn-success" %>
+<%= link_to "Update Profile", users_edit_path, class: "btn btn-success" %>

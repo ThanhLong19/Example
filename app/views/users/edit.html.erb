@@ -3,15 +3,14 @@
 <br />
 <h1 style="text-align: center">Update Your Profile</h1>
 
-<%= form_with model: @user, local: true do |edit| %>
-    <%= render 'shared/error_messages' %>
+<%= form_with model: @user, url: users_edit_path, local: true do |edit| %>
     <div class="mb-3">
-         <%= edit.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= edit.text_field :name, class: "form-control", placeholder: "ABCD" %>
+        <%= edit.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.text_field :name, class: "form-control", placeholder: "Cristiano Ronaldo" %>
     </div>
     <div class="mb-3">
-         <%= edit.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= edit.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
+        <%= edit.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= edit.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
     </div>
     <div class="mb-3">
         <%= edit.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>

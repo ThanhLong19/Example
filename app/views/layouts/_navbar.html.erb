@@ -7,28 +7,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <% if logged_in? %>
-                <!-- Default dropstart button -->
-                <li class="nav-item">
-                    <%= link_to "Profile", current_user,class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to "Reset Password", edit_password_path,class: "nav-link" %>
-                </li>
-            <% end %>
+                <% if !Current.user %>
+                    <li class="nav-item">
+                    </li>
+                 <% else %>
+                    <li class="nav-item">
+                        <%= link_to "Profile", profile_path, class: "nav-link active" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Update Password", edit_password_path, class: "nav-link active" %>
+                    </li>
+                 <% end %>
             </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
-            <% if !logged_in? %>
-                  <%= button_to "Sign In", signin_path, method: :get, class: "btn btn-success" %>
-            <% else %>
-                <!-- Default dropstart button -->
-                <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-success" %>
-            <% end %>
+                <% if !Current.user %>
+                    <%= button_to "Sign In", signin_path, method: :get, class: "btn btn-success" %>
+                <% else %>
+                    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-success" %>
+                <% end %>
+            </ul>
         </div>
     </div>
 </nav>

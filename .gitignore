@@ -49,3 +49,6 @@ yarn-debug.log*
 
 # Ignore application configuration
 /config/application.yml
+# /config/secrets.yml
+# /config/application.yml.example
+

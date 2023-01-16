@@ -3,10 +3,10 @@
 <br />
 <h1 style="text-align: center">Sign In</h1>
 
-<%= form_with url: signin_path, scope: :session, local: true, class: "px-4 py-3" do |signin| %>
+<%= form_with url: signin_path, local: true, class: "px-4 py-3" do |signin| %>
     <div class="mb-3">
         <%= signin.label :email, for: "exampleDropdownFormEmail1", class: "form-label" %>
-        <%= signin.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
+        <%= signin.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
     </div>
     <div class="mb-3">
         <%= signin.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
@@ -24,4 +24,4 @@
 <% end %>
 <div class="dropdown-divider"></div>
 <%= link_to "New around here? Sign up", signup_path, class: "dropdown-item"%>
-<%= link_to "Forgot password?", forget_password_path, class: "dropdown-item" %>
+<%= link_to "Forgot password?", password_reset_path, class: "dropdown-item" %>

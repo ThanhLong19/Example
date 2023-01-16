@@ -4,19 +4,17 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user&.authenticate(params[:session][:password])
-      # Log the user in and redirect to the user's show page.
-      reset_session
-      log_in user
-      redirect_to root_path, notice: "Hello #{user.name}"
+    user = User.find_by(email: params[:email])
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to root_path, notice: "Logged in Successfully!!!"
     else
-      redirect_to signin_path, alert: 'Signin errors. Invalid email/password'
+      redirect_to signin_path, alert: "Invalid email or password"
     end
   end
 
   def destroy
-    log_out
-    redirect_to root_url
+    session[:user_id] = nil
+    redirect_to root_path, notice: "Logged out successfully!!!"
   end
 end

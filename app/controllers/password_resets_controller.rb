@@ -1,39 +1,33 @@
 class PasswordResetsController < ApplicationController
-  before_action :require_user_logged_in!, only: [:edit, :update]
-  before_action :get_user, only: [:edit, :update]
-
   def new
   end
 
   def create
-    @user = User.find_by(email: params[:password_reset][:email].downcase)
-    if @user
-      @user.create_reset_digest
-      @user.send_password_reset_email
-      redirect_to root_url, notice: "Email sent with password reset instructions"
-    else
-      redirect_to forget_password_path, alert: "Email address not found"
+    @user = User.find_by(email: params[:email])
+    if @user.present?
+      PasswordMailer.with(user: @user).reset.deliver_now
     end
+    redirect_to root_path, notice: "Link reset password have sent your email"
   end
 
   def edit
+    @user = User.find_signed!(params[:token], purpose: "password_reset")
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    redirect_to signin_path, alert: "Your token has expired. Please try again."
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to root_path, notice: "Password has been reset."
+    @user = User.find_signed!(params[:token], purpose: "password_reset")
+    if @user.update(password_params)
+      redirect_to signin_path, notice: "Your password was reset successfully!!!. Please sign in"
     else
-      redirect_to root_path, notice: "Reset Password Fail"
+      redirect_to password_reset_edit_path(token: params[:token]), alert: @user.errors.full_messages
     end
   end
 
   private
 
-  def user_params
+  def password_params
     params.require(:user).permit(:password, :password_confirmation)
-  end
-
-  def get_user
-    @user = User.find_by(email: params[:email])
   end
 end

@@ -4,14 +4,13 @@
 <h1 style="text-align: center">Sign Up</h1>
 
 <%= form_with model: @user, url: signup_path, local: true do |signup| %>
-    <%= render 'shared/error_messages' %>
     <div class="mb-3">
-         <%= signup.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.text_field :name, class: "form-control", placeholder: "ABCD" %>
+        <%= signup.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.text_field :name, class: "form-control", placeholder: "Cristiano Ronaldo" %>
     </div>
     <div class="mb-3">
-         <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
-        <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "email@example.com" %>
+        <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
     </div>
     <div class="mb-3">
         <%= signup.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>

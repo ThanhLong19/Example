@@ -1,0 +1,16 @@
+<br />
+<br />
+<br />
+<h1 style="text-align: center">Update Password</h1>
+
+<%= form_with model: Current.user, url: edit_password_path, class: "px-4 py-3" do |update| %>
+    <div class="mb-3">
+        <%= update.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= update.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+    </div>
+    <div class="mb-3">
+        <%= update.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+        <%= update.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    </div>
+    <%= update.submit "Save Changes", class: "btn btn-success" %>
+<% end %>
