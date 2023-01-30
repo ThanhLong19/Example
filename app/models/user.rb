@@ -11,6 +11,11 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, length: { maximum: 62 }, format: { with: VALID_EMAIL_REGEX }
 
+  #=================Check validation of address(User) + birthday(User)=================
+
+  validates :birthday, presence: true
+  validates :address, presence: true
+
   #=================Check validation of password=================
   has_secure_password   #add Gemfile "bcrypt"
 

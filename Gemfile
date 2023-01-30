@@ -75,4 +75,7 @@ end
 
 gem "figaro"
 
+gem "faker", "~> 3.1"
 gem "irb", "~> 1.6", ">= 1.6.2"
+
+gem "pry", "~> 0.14.2"

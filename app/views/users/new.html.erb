@@ -7,15 +7,24 @@
   </div>
   <div class="mb-3">
     <%= signup.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= signup.email_field :email, class: "form-control", id: "exampleDropdownFormEmail1", placeholder: "ronaldo@example.com" %>
+    <%= signup.email_field :email, class: "form-control", placeholder: "ronaldo@example.com" %>
+  </div>
+    <div class="mb-3">
+    <%= signup.label :birthday, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.date_field :birthday, class: "form-control", placeholder: "Birthday" %>
+  </div>
+  <div class="mb-3">
+    <%= signup.label :address, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= signup.text_field :address, class: "form-control", placeholder: "Address" %>
   </div>
   <div class="mb-3">
     <%= signup.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= signup.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+    <%= signup.password_field :password, class: "form-control", placeholder: "Password" %>
   </div>
-  <div class="mb-3">
+    <div class="mb-3">
     <%= signup.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= signup.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    <%= signup.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
   </div>
+
   <%= signup.submit "Sign Up", class: "btn btn-success"  %>
 <% end %>

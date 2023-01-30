@@ -20,4 +20,11 @@ Rails.application.routes.draw do
   post "password/reset", to: "password_resets#create"
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
+
+  get "manager", to: "manager_user#show" #Hiển thị hết các User có trong database
+  get "manager/new", to: "manager_user#new", as: :manager_new
+  post "manager/new", to: "manager_user#create" #Trang tạo mới User
+  get "manager/edit/:id", to: "manager_user#edit", as: :manager_edit
+  patch "manager/edit/:id", to: "manager_user#update"  #Trang update User
+  get "manager/destroy/:id", to: "manager_user#destroy", as: :manager_destroy #Xóa User
 end
