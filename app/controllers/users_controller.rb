@@ -1,6 +1,10 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
+  before_action :require_user_logged_in
+
+  def show
+    @user = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -9,30 +13,39 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Create account successfully!!!"
+      redirect_to show_path, notice: "Create User successfully!!!"
     else
-      redirect_to signup_path, alert: @user.errors.full_messages
+      redirect_to new_user_path, alert: @user.errors.full_messages
     end
   end
 
-  def show
-    @user = User.find_by(id: session[:user_id])
-  end
-
   def edit
-    @user = User.find_by(id: session[:user_id])
+    get_user
   end
 
   def update
-    @user = User.find_by(id: session[:user_id])
+    get_user
     if @user.update(user_params)
-      redirect_to root_path, notice: "Update Information Users successfully!!!"
+      redirect_to show_path, notice: "Update Users successfully!!!"
     else
-      redirect_to users_edit_path, alert: @user.errors.full_messages
+      redirect_to edit_user_path, alert: @user.errors.full_messages
+    end
+  end
+
+  def destroy
+    get_user
+    if @user.destroy
+      redirect_to show_path, notice: "Delete User Successfully"
+    else
+      redirect_to show_path, alert: "Delete User Failed"
     end
   end
 
   private
+
+  def get_user
+    @user = User.find_by(id: params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation)

@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_logged_in
-    redirect_to signin_path, notice: "You must be logged in to do what" if Current.user.nil?
+    redirect_to new_session_path, notice: "You must be logged in to do what" if Current.user.nil?
   end
 end

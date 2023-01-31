@@ -1,6 +1,6 @@
 <h1 class="title_h1">Forget Password</h1>
 
-<%= form_with url: password_reset_path, class: "px-4 py-3" do |forget| %>
+<%= form_with url: password_resets_path, class: "px-4 py-3" do |forget| %>
   <div class="mb-3">
     <%= forget.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= forget.email_field :email, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "ronaldo@example.com" %>

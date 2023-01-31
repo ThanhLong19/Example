@@ -1,21 +1,26 @@
-<h1 class="title_h1">Profile</h1>
+<h1 class="title_h1">Manager User</h1>
+
+<%= link_to "Create new User", new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
+
 <table class="table">
   <tr>
-    <th>Name: </th>
-    <td><%= @user.name %></td>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+    <th>Adress</th>
+    <th>Action</th>
   </tr>
-  <tr>
-    <th>Email: </th>
-    <td><%= @user.email %></td>
-  </tr>
-  <tr>
-    <th>Address: </th>
-    <td><%= @user.address %></td>
-  </tr>
-  <tr>
-    <th>Birthday: </th>
-    <td><%= @user.birthday %></td>
-  </tr>
+
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.birthday %></td>
+      <td><%= user.address %></td>
+      <td>
+        <%= link_to "Edit", edit_user_path(user), class: "btn btn-success" %>
+        <%= link_to "Delete", users_destroy_path(user), class: "btn btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
 </table>
-<br/>
-<%= link_to "Update Profile", users_edit_path, class: "btn btn-success" %>
