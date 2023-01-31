@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def require_user_logged_in
     redirect_to new_session_path, notice: "You must be logged in to do what" if Current.user.nil?
   end
+
+  def get_user
+    @user = User.find_by(id: params[:id])
+  end
 end

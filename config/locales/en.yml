@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  update_password: "Update Password"
+  list_user: "List User"
+  sign_in: "Sign In"
+  logout: "Logout"
+  save_changes: "Save Changes"
+  reset_password: "Reset Password"
+  forget_password: "Forget Password?"
+  submit: "Submit"
+  edit: "Edit"
+  delete: "Delete"
+  sign_up: "Sign Up"

@@ -1,0 +1,26 @@
+<h1 class="title_h1">List User</h1>
+
+<%= link_to "Create new User", new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Birthday</th>
+    <th>Adress</th>
+    <th>Action</th>
+  </tr>
+
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.birthday %></td>
+      <td><%= user.address %></td>
+      <td>
+        <%= link_to t(:edit), edit_user_path(user), class: "btn btn-success" %>
+        <%= button_to t(:delete), user_path(user), method: :delete, class: "btn btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
+</table>

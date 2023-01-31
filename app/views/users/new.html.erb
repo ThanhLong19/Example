@@ -11,7 +11,7 @@
   </div>
     <div class="mb-3">
     <%= new.label :birthday, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.date_field :birthday, class: "form-control", placeholder: "Birthday" %>
+    <%= new.date_field :birthday, class: "form-control", placeholder: "mm/dd/yyyy" %>
   </div>
   <div class="mb-3">
     <%= new.label :address, for: "exampleDropdownFormPassword1", class: "form-label" %>
@@ -26,5 +26,5 @@
     <%= new.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
   </div>
 
-  <%= new.submit "Sign Up", class: "btn btn-success"  %>
+  <%= new.submit t(:sign_up), class: "btn btn-success"  %>
 <% end %>
