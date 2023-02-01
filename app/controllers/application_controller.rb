@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_current_user
+  before_action :set_locale
 
   def set_current_user
     if session[:user_id]
@@ -10,6 +11,14 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_logged_in
-    redirect_to signin_path, notice: "You must be logged in to do what" if Current.user.nil?
+    redirect_to new_session_path, notice: t(".require_user_logged_in_notice") if Current.user.nil?
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options
+    { locale: I18n.locale }
   end
 end

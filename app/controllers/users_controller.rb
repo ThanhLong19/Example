@@ -1,6 +1,11 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
+  before_action :require_user_logged_in
+  before_action :get_user, only: [:edit, :update, :destroy]
+
+  def index
+    @user = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -9,32 +14,44 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Create account successfully!!!"
+      redirect_to users_path, notice: t(".create_success_notice")
     else
-      redirect_to signup_path, alert: @user.errors.full_messages
+      redirect_to new_user_path, alert: @user.errors.full_messages
     end
   end
 
-  def show
-    @user = User.find_by(id: session[:user_id])
+  def edit
   end
 
-  def edit
-    @user = User.find_by(id: session[:user_id])
+  def show
   end
 
   def update
-    @user = User.find_by(id: session[:user_id])
     if @user.update(user_params)
-      redirect_to root_path, notice: "Update Information Users successfully!!!"
+      redirect_to users_path, notice: t(".update_success_notice")
     else
-      redirect_to users_edit_path, alert: @user.errors.full_messages
+      redirect_to edit_user_path, alert: @user.errors.full_messages
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      redirect_to users_path, notice: t(".delete_success_notice")
+    else
+      redirect_to users_path, alert: t(".delete_success_alert")
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation)
+  end
+
+  def get_user
+    @user = User.find_by(id: params[:id])
+    if @user == nil
+      redirect_to root_path, notice: "Users not found"
+    end
   end
 end

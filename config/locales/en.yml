@@ -1,33 +1,93 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  home:
+    index:
+      hello: "Welcome to Bunbu Company"
+
+  layouts:
+    navbar:
+      company: "Bunbu Company"
+      update_password: "Update Password"
+      list_user: "List User"
+      search: "Search"
+      sign_in: "Sign In"
+      logout: "Logout"
+      language: "Language"
+      english: "English"
+      japan: "Japanese"
+
+  password_mailer:
+    reset_html:
+      notice_sent_password: "Someone request has been sent to your email, click to reset your password. This link lasts for 15 minutes"
+      reset_password: "Reset Password"
+    reset_text:
+      notice_sent_password: "Someone request has been sent to your email, click to reset your password. This link lasts for 15 minutes"
+
+  password_resets:
+    edit:
+      reset_password: "Reset Password"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save_changes: "Save Changes"
+      your_token_alert: "Your token has expired. Please try again."
+    update:
+      reset_success_notice: "Your password was reset successfully!!!. Please sign in"
+    new:
+      forget_password: "Forget Password"
+      email: "Email"
+      sent_email: "Sent Email"
+    create:
+      link_reset_notice: "Link reset password have sent your email"
+      link_reset_alert: "Sent link reset password fail"
+
+  passwords:
+    edit:
+      update_password: "Update Password"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save_changes: "Save Changes"
+    update:
+      update_success_notice: "Update password successfully!!!"
+
+  sessions:
+    new:
+      sign_in: "Sign In"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+      forget_password: "Forget Password"
+    create:
+      login_success_notice: "Logged in Successfully!!!"
+      login_success_alert: "無効なメールアドレスまたはパスワード"
+    destroy:
+      logout_success_notice: "Logged out successfully!!!"
+
+  users:
+    edit:
+      edit_user: "Edit User"
+      name: "Name"
+      email: "Email"
+      birthday: "Birthday"
+      address: "Address"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      submit: "Submit"
+    index:
+      list_user: "List User"
+      create_user: "Create New User"
+      name: "Name"
+      email: "Email"
+      birthday: "Birthday"
+      address: "Address"
+      action: "Action"
+      edit: "Edit"
+      delete: "Delete"
+      require_user_logged_in_notice: "You must be logged in to do what"
+    show:
+      profile_user: "Profile User"
+    create:
+      create_success_notice: "Create User successfully!!!"
+    update:
+      update_success_notice: "Update Users successfully!!!"
+    destroy:
+      delete_success_notice: "Delete User Successfully"
+      delete_success_alert: "Delete User Failed"

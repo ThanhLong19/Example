@@ -1,0 +1,93 @@
+ja:
+  home:
+    index:
+      hello: "ぶんぶカンパニーへようこそ"
+
+  layouts:
+    navbar:
+      company: "ぶんぶカンパニー"
+      update_password: "パスワードの更新"
+      list_user: "ユーザーの一覧表示"
+      search: "探す"
+      sign_in: "サインイン"
+      logout: "ログアウト"
+      language: "言語"
+      english: "英語"
+      japan: "日本"
+
+  password_mailer:
+    reset_html:
+      notice_sent_password: "誰かのリクエストがあなたのメールアドレスに送信されました。クリックしてパスワードをリセットしてください。 このリンクは 15 分間続きます"
+      reset_password: "パスワードを再設定する"
+    reset_text:
+      notice_sent_password: "誰かのリクエストがあなたのメールアドレスに送信されました。クリックしてパスワードをリセットしてください。 このリンクは 15 分間続きます"
+
+  password_resets:
+    edit:
+      reset_password: "パスワードを再設定する"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      save_changes: "変更内容を保存"
+      your_token_alert: "トークンの有効期限が切れています。 もう一度お試しください."
+    update:
+      reset_success_notice: "パスワードが正常にリセットされました!!!. サインインしてください"
+    new:
+      forget_password: "パスワードを忘れた"
+      email: "Eメール"
+      sent_email: "送信済みメール"
+    create:
+      link_reset_notice: "リンクのリセット パスワードがメールを送信しました"
+      link_reset_alert: "リンクのリセット パスワードを送信できませんでした"
+
+  passwords:
+    edit:
+      update_password: "パスワードの更新"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      save_changes: "変更内容を保存"
+    update:
+      update_success_notice: "パスワードを正常に更新!!!"
+
+  sessions:
+    new:
+      sign_in: "サインイン"
+      email: "Eメール"
+      password: "パスワード"
+      remember_me: "私を覚えてますか"
+      forget_password: "パスワードを忘れた"
+    create:
+      login_success_notice: "ログイン成功!!!"
+      login_success_alert: "無効なメールアドレスまたはパスワード"
+    destroy:
+      logout_success_notice: "ログアウトしました!!!"
+
+  users:
+    edit:
+      edit_user: "ユーザーの編集"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      submit: "送信"
+      require_user_logged_in_notice: "何をするにもログインする必要があります"
+    index:
+      list_user: "ユーザーの一覧表示"
+      create_user: "新しいユーザーを作成"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      action: "アクション"
+      edit: "編集"
+      delete: "消去"
+    show:
+      profile_user: "プロファイル ユーザー"
+    create:
+      create_success_notice: "ユーザーの作成に成功しました!!!"
+    update:
+      update_success_notice: "ユーザーを正常に更新!!!"
+    destroy:
+      delete_success_notice: "ユーザーを正常に削除"
+      delete_success_alert: "ユーザーの削除に失敗しました"

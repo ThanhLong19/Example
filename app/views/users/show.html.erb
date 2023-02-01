@@ -1,16 +1,1 @@
-<br/>
-<br/>
-<h1 class="title_h1">Profile</h1>
-<br/>
-<table>
-  <tr>
-    <th>Name: </th>
-    <td><%= @user.name %></td>
-  </tr>
-  <tr>
-    <th>Email: </th>
-    <td><%= @user.email %></td>
-  </tr>
-</table>
-<br/>
-<%= link_to "Update Profile", users_edit_path, class: "btn btn-success" %>
+<h1 class="title_h1"><%= t(:profile_user, scope: [:users, :show]) %></h1>

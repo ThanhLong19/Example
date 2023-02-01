@@ -1,13 +1,13 @@
-<h1 class="title_h1">Update Password</h1>
+<h1 class="title_h1"><%= t(".update_password")%></h1>
 
-<%= form_with model: Current.user, url: edit_password_path, class: "px-4 py-3" do |update| %>
+<%= form_with model: Current.user, url: password_path, class: "px-4 py-3" do |update| %>
   <div class="mb-3">
-    <%= update.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= update.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password" %>
+    <%= update.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= update.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password") %>
   </div>
   <div class="mb-3">
-    <%= update.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= update.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "Password Confirmation" %>
+    <%= update.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= update.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password_confirmation") %>
   </div>
-  <%= update.submit "Save Changes", class: "btn btn-success" %>
+  <%= update.submit t(".save_changes"), class: "btn btn-success" %>
 <% end %>

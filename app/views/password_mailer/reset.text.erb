@@ -1,4 +1,5 @@
+
 Hi <%= params[:user].email %>
 <br/>
-Someone request has been sent to your email, click to reset your password. This link lasts for 15 minutes
+<%= t(".notice_sent_password") %>
 <%= password_reset_edit_url(token: @token) %>
