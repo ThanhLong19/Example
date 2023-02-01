@@ -1,30 +1,30 @@
-<h1 class="title_h1">Edit User</h1>
+<h1 class="title_h1"><%= t(:edit_user, scope: [:users, :edit]) %></h1>
 
 <%= form_with model: @user, url: user_path, local: true do |edit| %>
   <div class="mb-3">
-    <%= edit.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.text_field :name, class: "form-control", placeholder: "Name" %>
+    <%= edit.label t(:name, scope: [:users, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.text_field :name, class: "form-control", placeholder: t(:name, scope: [:users, :edit]) %>
   </div>
   <div class="mb-3">
-    <%= edit.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.label t(:email, scope: [:password_resets, :new]), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= edit.email_field :email, class: "form-control", placeholder: "email@example.com" %>
   </div>
     <div class="mb-3">
-    <%= edit.label :birthday, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.date_field :birthday, class: "form-control", placeholder: "mm/dd/yyyy" %>
+    <%= edit.label t(:birthday, scope: [:users, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.date_field :birthday, class: "form-control", placeholder: t(:birthday, scope: [:users, :edit]) %>
   </div>
   <div class="mb-3">
-    <%= edit.label :address, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.text_field :address, class: "form-control", placeholder: "Address" %>
+    <%= edit.label t(:address, scope: [:users, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.text_field :address, class: "form-control", placeholder: t(:address, scope: [:users, :edit]) %>
   </div>
   <div class="mb-3">
-    <%= edit.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.password_field :password, class: "form-control", placeholder: "Password" %>
+    <%= edit.label t(:password, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.password_field :password, class: "form-control", placeholder: t(:password, scope: [:password_resets, :edit]) %>
   </div>
     <div class="mb-3">
-    <%= edit.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+    <%= edit.label t(:password_confirmation, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.password_field :password_confirmation, class: "form-control", placeholder: t(:password_confirmation, scope: [:password_resets, :edit]) %>
   </div>
 
-  <%= edit.submit t(:submit), class: "btn btn-success"  %>
+  <%= edit.submit t(:submit, scope: [:users, :edit]), class: "btn btn-success"  %>
 <% end %>

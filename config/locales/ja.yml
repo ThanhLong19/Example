@@ -1,0 +1,55 @@
+ja:
+  home:
+    index:
+      hello: "ぶんぶカンパニーへようこそ"
+
+  layouts:
+    navbar:
+      company: "ぶんぶカンパニー"
+      update_password: "パスワードの更新"
+      list_user: "ユーザーの一覧表示"
+      search: "探す"
+      sign_in: "サインイン"
+      logout: "ログアウト"
+      language: "言語"
+      english: "英語"
+      japan: "日本"
+
+  password_mailer:
+    reset_html:
+      notice_sent_password: "誰かのリクエストがあなたのメールアドレスに送信されました。クリックしてパスワードをリセットしてください。 このリンクは 15 分間続きます"
+      reset_password: "パスワードを再設定する"
+
+  password_resets:
+    edit:
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      save_changes: "変更内容を保存"
+    new:
+      forget_password: "パスワードを忘れた"
+      email: "Eメール"
+      sent_email: "送信済みメール"
+
+  passwords:
+    edit:
+      update_password: "パスワードの更新"
+
+  sessions:
+    new:
+      sign_in: "サインイン"
+      remember_me: "私を覚えてますか"
+
+  users:
+    edit:
+      edit_user: "ユーザーの編集"
+      name: "名前"
+      birthday: "お誕生日"
+      address: "住所"
+      submit: "送信"
+    index:
+      create_user: "新しいユーザーを作成"
+      action: "アクション"
+      edit: "編集"
+      delete: "消去"
+    show:
+      profile_user: "プロファイル ユーザー"

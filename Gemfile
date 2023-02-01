@@ -78,4 +78,5 @@ gem "figaro"
 gem "faker", "~> 3.1"
 gem "irb", "~> 1.6", ">= 1.6.2"
 
-gem "pry-rails", "~> 0.3.9"
+# gem "pry-rails", "~> 0.3.9"
+gem "rails-i18n", "~> 7.0", ">= 7.0.6"

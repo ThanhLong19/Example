@@ -1,9 +1,9 @@
-<h1 class="title_h1">Forget Password</h1>
+<h1 class="title_h1"><%= t(:forget_password, scope: [:password_resets, :new]) %></h1>
 
 <%= form_with url: password_resets_path, class: "px-4 py-3" do |forget| %>
   <div class="mb-3">
-    <%= forget.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= forget.label t(:email, scope: [:password_resets, :new]), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= forget.email_field :email, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: "ronaldo@example.com" %>
   </div>
-  <%= forget.submit t(:reset_password), class: "btn btn-success" %>
+  <%= forget.submit t(:sent_email, scope: [:password_resets, :new]), class: "btn btn-success" %>
 <% end %>

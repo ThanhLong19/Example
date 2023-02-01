@@ -1,44 +1,55 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
-  update_password: "Update Password"
-  list_user: "List User"
-  sign_in: "Sign In"
-  logout: "Logout"
-  save_changes: "Save Changes"
-  reset_password: "Reset Password"
-  forget_password: "Forget Password?"
-  submit: "Submit"
-  edit: "Edit"
-  delete: "Delete"
-  sign_up: "Sign Up"
+  home:
+    index:
+      hello: "Welcome to Bunbu Company"
+
+  layouts:
+    navbar:
+      company: "Bunbu Company"
+      update_password: "Update Password"
+      list_user: "List User"
+      search: "Search"
+      sign_in: "Sign In"
+      logout: "Logout"
+      language: "Language"
+      english: "English"
+      japan: "Japanese"
+
+  password_mailer:
+    reset_html:
+      notice_sent_password: "Someone request has been sent to your email, click to reset your password. This link lasts for 15 minutes"
+      reset_password: "Reset Password"
+
+  password_resets:
+    edit:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      save_changes: "Save Changes"
+    new:
+      forget_password: "Forget Password"
+      email: "Email"
+      sent_email: "Sent Email"
+
+  passwords:
+    edit:
+      update_password: "Update Password"
+
+  sessions:
+    new:
+      sign_in: "Sign In"
+      remember_me: "Remember me"
+
+  users:
+    edit:
+      edit_user: "Edit User"
+      name: "Name"
+      birthday: "Birthday"
+      address: "Address"
+      submit: "Submit"
+    index:
+      create_user: "Create New User"
+      action: "Action"
+      edit: "Edit"
+      delete: "Delete"
+    show:
+      profile_user: "Profile User"

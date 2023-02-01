@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  root "home#index"
+  scope "(:locale)", locale: /en|vi|ja/ do
+    root "home#index"
 
-  resources :sessions
+    resources :sessions
 
-  resources :passwords
+    resources :passwords
 
-  resources :password_resets, only: [:new, :create]
-  get "password/reset/edit", to: "password_resets#edit"
-  patch "password/reset/edit", to: "password_resets#update"
+    resources :password_resets, only: [:new, :create]
+    get "password/reset/edit", to: "password_resets#edit"
+    patch "password/reset/edit", to: "password_resets#update"
 
-  resources :users
+    resources :users
+  end
 end
