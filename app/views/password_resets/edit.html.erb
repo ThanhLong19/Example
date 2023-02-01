@@ -1,4 +1,4 @@
-<h1 class="title_h1"><%= t(:reset_password, scope: [:password_mailer, :reset_html]) %></h1>
+<h1 class="title_h1"><%= t(".reset_password") %></h1>
 
 <%= form_with model: @user, url: password_reset_edit_path(token: params[:token]), class: "px-4 py-3" do |reset| %>
   <% if reset.object.errors.any? %>
@@ -11,12 +11,12 @@
     </div>
   <% end %>
   <div class="mb-3">
-    <%= reset.label t(:password, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= reset.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(:password, scope: [:password_resets, :edit]) %>
+    <%= reset.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= reset.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password") %>
   </div>
   <div class="mb-3">
-    <%= reset.label t(:password_confirmation, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= reset.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(:password_confirmation, scope: [:password_resets, :edit]) %>
+    <%= reset.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= reset.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password_confirmation") %>
   </div>
-  <%= reset.submit t(:save_changes, scope: [:password_resets, :edit]), class: "btn btn-success" %>
+  <%= reset.submit t(".save_changes"), class: "btn btn-success" %>
 <% end %>

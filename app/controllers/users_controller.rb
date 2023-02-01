@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to users_path, notice: "Create User successfully!!!"
+      redirect_to users_path, notice: t(".create_success_notice")
     else
       redirect_to new_user_path, alert: @user.errors.full_messages
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, notice: "Update Users successfully!!!"
+      redirect_to users_path, notice: t(".update_success_notice")
     else
       redirect_to edit_user_path, alert: @user.errors.full_messages
     end
@@ -36,9 +36,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      redirect_to users_path, notice: "Delete User Successfully"
+      redirect_to users_path, notice: t(".delete_success_notice")
     else
-      redirect_to users_path, alert: "Delete User Failed"
+      redirect_to users_path, alert: t(".delete_success_alert")
     end
   end
 
@@ -50,5 +50,8 @@ class UsersController < ApplicationController
 
   def get_user
     @user = User.find_by(id: params[:id])
+    if @user == nil
+      redirect_to root_path, notice: "Users not found"
+    end
   end
 end

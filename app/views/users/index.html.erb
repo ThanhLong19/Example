@@ -1,14 +1,14 @@
-<h1 class="title_h1"><%= t(:list_user, scope: [:layouts, :navbar]) %></h1>
+<h1 class="title_h1"><%= t(".list_user") %></h1>
 
-<%= link_to t(:create_user, scope: [:users, :index]), new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
+<%= link_to t(".create_user"), new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
 
 <table class="table">
   <tr>
-    <th><%= t(:name, scope: [:users, :edit])%></th>
-    <th><%= t(:email, scope: [:users, :edit])%></th>
-    <th><%= t(:birthday, scope: [:users, :edit])%></th>
-    <th><%= t(:address, scope: [:users, :edit])%></th>
-    <th><%= t(:action, scope: [:users, :index])%></th>
+    <th><%= t(".name")%></th>
+    <th><%= t(".email")%></th>
+    <th><%= t(".birthday")%></th>
+    <th><%= t(".address")%></th>
+    <th><%= t(".action")%></th>
   </tr>
 
   <% @user.each do |user| %>
@@ -18,8 +18,8 @@
       <td><%= user.birthday %></td>
       <td><%= user.address %></td>
       <td>
-        <%= link_to t(:edit, scope: [:users, :index]), edit_user_path(user), class: "btn btn-success" %>
-        <%= button_to t(:delete, scope: [:users, :index]), user_path(user), method: :delete, class: "btn btn-danger" %>
+        <%= link_to t(".edit"), edit_user_path(user), class: "btn btn-success" %>
+        <%= button_to t(".delete"), user_path(user), method: :delete, class: "btn btn-danger" %>
       </td>
     </tr>
   <% end %>

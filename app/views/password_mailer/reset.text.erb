@@ -1,5 +1,5 @@
 
 Hi <%= params[:user].email %>
 <br/>
-<%= t(:notice_sent_password, scope: [:password_mailer, :reset_html]) %>
+<%= t(".notice_sent_password") %>
 <%= password_reset_edit_url(token: @token) %>

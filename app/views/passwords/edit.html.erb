@@ -1,13 +1,13 @@
-<h1 class="title_h1"><%= t(:update_password, scope: [:passwords, :edit])%></h1>
+<h1 class="title_h1"><%= t(".update_password")%></h1>
 
 <%= form_with model: Current.user, url: password_path, class: "px-4 py-3" do |update| %>
   <div class="mb-3">
-    <%= update.label t(:password, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= update.password_field t(:password, scope: [:password_resets, :edit]), class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(:password, scope: [:password_resets, :edit]) %>
+    <%= update.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= update.password_field :password, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password") %>
   </div>
   <div class="mb-3">
-    <%= update.label t(:password_confirmation, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= update.password_field t(:password_confirmation, scope: [:password_resets, :edit]), class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(:password_confirmation, scope: [:password_resets, :edit]) %>
+    <%= update.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= update.password_field :password_confirmation, class: "form-control", id: "exampleDropdownFormPassword1", placeholder: t(".password_confirmation") %>
   </div>
-  <%= update.submit t(:save_changes, scope: [:password_resets, :edit]), class: "btn btn-success" %>
+  <%= update.submit t(".save_changes"), class: "btn btn-success" %>
 <% end %>

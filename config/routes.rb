@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|vi|ja/ do
+  scope "(:locale)", locale: /en|ja/ do
     root "home#index"
 
     resources :sessions
