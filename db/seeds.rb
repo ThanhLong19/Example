@@ -14,6 +14,14 @@ User.create!(name: "Thành Long",
              birthday: "2001-01-19",
              address: "Thanh Oai - Hà Nội",
              password: "long1901",
+             password_confirmation: "long1901",
+             admin: true)
+
+User.create!(name: "Long Phạm",
+             email: "longp2k1@gmail.com",
+             birthday: "2001-01-19",
+             address: "Thanh Oai - Hà Nội",
+             password: "long1901",
              password_confirmation: "long1901")
 
 19.times do |n|

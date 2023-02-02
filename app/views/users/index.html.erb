@@ -1,6 +1,8 @@
 <h1 class="title_h1"><%= t(".list_user") %></h1>
 
-<%= link_to t(".create_user"), new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
+<% if current_user.admin? %>
+  <%= link_to t(".create_user"), new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
+<% end %>
 
 <table class="table">
   <tr>
@@ -11,16 +13,25 @@
     <th><%= t(".action")%></th>
   </tr>
 
-  <% @user.each do |user| %>
+  <% @listuser.each do |list| %>
     <tr>
-      <td><%= user.name %></td>
-      <td><%= user.email %></td>
-      <td><%= user.birthday %></td>
-      <td><%= user.address %></td>
-      <td>
-        <%= link_to t(".edit"), edit_user_path(user), class: "btn btn-success" %>
-        <%= button_to t(".delete"), user_path(user), method: :delete, class: "btn btn-danger" %>
-      </td>
+      <td><%= list.name %></td>
+      <td><%= list.email %></td>
+      <td><%= list.birthday %></td>
+      <td><%= list.address %></td>
+      <% if current_user.admin? %>
+        <td>
+          <%= link_to t(".profile"), user_path(list), class: "btn btn-success" %>
+          <%= link_to t(".edit"), edit_user_path(list), class: "btn btn-success" %>
+          <%= button_to t(".delete"), user_path(list), method: :delete, class: "btn btn-danger" %>
+        </td>  
+      <% else %>
+        <% if current_user.id == list.id %>
+          <td>
+            <%= link_to t(".profile"), user_path(list), class: "btn btn-success" %>
+          </td>
+        <% end %>
+      <% end %>  
     </tr>
   <% end %>
 </table>

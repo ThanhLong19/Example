@@ -72,6 +72,8 @@ ja:
       password_confirmation: "パスワードの確認"
       submit: "送信"
       require_user_logged_in_notice: "何をするにもログインする必要があります"
+      not_found_users_notice: "ユーザーが見つかりません"
+      not_access_notice: "アクセス権がありません"
     index:
       list_user: "ユーザーの一覧表示"
       create_user: "新しいユーザーを作成"
@@ -82,8 +84,13 @@ ja:
       action: "アクション"
       edit: "編集"
       delete: "消去"
+      profile: "プロフィール"
     show:
       profile_user: "プロファイル ユーザー"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
     update:

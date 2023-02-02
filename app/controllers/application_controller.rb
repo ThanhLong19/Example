@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { locale: I18n.locale }
   end
+
+  def require_user_admin
+    redirect_to root_path, notice: t(".not_access_notice") if !User.find_by(id: session[:user_id]).admin? || User.find_by(id: params[:id]) != User.find_by(id: session[:user_id])
+  end
 end

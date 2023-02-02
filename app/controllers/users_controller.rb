@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in
   before_action :get_user, only: [:edit, :update, :destroy]
+  before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @user = User.all
+    @listuser = User.all
   end
 
   def new
@@ -24,6 +25,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: session[:user_id])
+    if @user.admin?
+      get_user
+    elsif !@user.admin? && User.find_by(id: session[:user_id]) == User.find_by(id: params[:id])
+      @user = User.find_by(id: session[:user_id])
+    else
+      redirect_to root_path, notice: t(".not_access_notice")
+    end
   end
 
   def update
@@ -51,7 +60,7 @@ class UsersController < ApplicationController
   def get_user
     @user = User.find_by(id: params[:id])
     if @user == nil
-      redirect_to root_path, notice: "Users not found"
+      redirect_to root_path, notice: t(".not_found_users_notice")
     end
   end
 end
