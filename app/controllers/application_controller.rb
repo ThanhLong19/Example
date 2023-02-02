@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
   def require_user_logged_in
-    redirect_to new_session_path, notice: t(".require_user_logged_in_notice") if current_user.nil?
+    redirect_to new_user_session_path, notice: t(".require_user_logged_in_notice") if current_user.nil?
   end
 
   def require_user_admin

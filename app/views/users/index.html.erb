@@ -2,6 +2,7 @@
 <% if current_user.role == "admin" %>
   <%= link_to t(".create_user"), admin_new_users_path, class: "btn btn-success", style: "margin-top: 50px" %>
 <% end %>
+
 <table class="table">
   <tr>
     <th><%= t(".name")%></th>

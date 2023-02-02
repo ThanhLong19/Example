@@ -67,5 +67,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     redirect_to root_path, notice: "Users not found" unless @user
     @user
+
   end
 end
