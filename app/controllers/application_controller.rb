@@ -24,5 +24,5 @@ class ApplicationController < ActionController::Base
 
   def require_user_admin
     redirect_to root_path, notice: t(".not_access_notice") unless current_user.admin?
-  end
+
 end

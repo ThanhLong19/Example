@@ -17,6 +17,7 @@ User.create!(name: "Thành Long",
              password_confirmation: "long1901",
              role: 1)
 
+
 User.create!(name: "Long Phạm",
              email: "longp2k1@gmail.com",
              birthday: "2001-01-19",

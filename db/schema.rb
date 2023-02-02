@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_093428) do
     t.date "birthday"
     t.string "address"
     t.integer "role", default: 0
+
   end
 
 end
