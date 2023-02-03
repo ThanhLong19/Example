@@ -93,7 +93,6 @@ ja:
       address: "住所"
       not_access_notice: "アクセス権がありません"
       not_found_users_notice: "ユーザーが見つかりません"
-
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
       create_fail_alert: "ユーザーの作成に失敗しました"

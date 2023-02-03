@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      redirect_to new_user_path, alert: t(".create_fail_alert")
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to users_path, notice: t(".update_success_notice")
     else
-      redirect_to edit_user_path, alert: t(".update_fail_notice")
+      render :edit
     end
   end
 
@@ -53,6 +53,5 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     redirect_to root_path, notice: "Users not found" unless @user
     @user
-
   end
 end
