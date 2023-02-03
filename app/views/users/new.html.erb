@@ -4,6 +4,12 @@
   <div class="mb-3">
     <%= new.label t(:name, scope: [:users, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.text_field :name, class: "form-control", placeholder: t(:name, scope: [:users, :edit]) %>
+    <% @user.errors.full_messages.each do |m| %>
+      <div>
+        <%= m %>
+      <div>
+    <% end %>
+  </ul>
   </div>
   <div class="mb-3">
     <%= new.label t(:email, scope: [:password_resets, :new]), for: "exampleDropdownFormPassword1", class: "form-label" %>
@@ -21,9 +27,17 @@
     <%= new.label t(:password, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.password_field :password, class: "form-control", placeholder: t(:password, scope: [:password_resets, :edit]) %>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <%= new.label t(:password_confirmation, scope: [:password_resets, :edit]), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.password_field :password_confirmation, class: "form-control", placeholder: t(:password_confirmation, scope: [:password_resets, :edit]) %>
+  </div>
+
+  <div class="mb-3">
+    <%= new.label :role, for: "exampleDropdownFormPassword1"%></br>
+    <%= new.radio_button :role, "admin" %>
+    <%= new.label :admin, for: "exampleDropdownFormPassword1" %>
+    <%= new.radio_button :role, "user_normal" %>
+    <%= new.label :normal, for: "exampleDropdownFormPassword1" %>
   </div>
 
   <%= new.submit t(:submit, scope: [:users, :edit]), class: "btn btn-success"  %>

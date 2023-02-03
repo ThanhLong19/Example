@@ -57,7 +57,7 @@ en:
       forget_password: "Forget Password"
     create:
       login_success_notice: "Logged in Successfully!!!"
-      login_success_alert: "無効なメールアドレスまたはパスワード"
+      login_success_alert: "Invalid email address or password"
     destroy:
       logout_success_notice: "Logged out successfully!!!"
 
@@ -91,10 +91,15 @@ en:
       email: "Email"
       birthday: "Birthday"
       address: "Address"
+      not_access_notice: "You do not have access"
     create:
       create_success_notice: "Create User successfully!!!"
+      create_fail_alert: "Create User Failed"
     update:
       update_success_notice: "Update Users successfully!!!"
+      update_fail_notice: "Update Users failed!!!"
     destroy:
       delete_success_notice: "Delete User Successfully"
       delete_success_alert: "Delete User Failed"
+    new:
+      not_access_notice: "You do not have access"

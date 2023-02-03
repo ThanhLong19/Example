@@ -91,10 +91,15 @@ ja:
       email: "Eメール"
       birthday: "お誕生日"
       address: "住所"
+      not_access_notice: "アクセス権がありません"
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
+      create_fail_alert: "ユーザーの作成に失敗しました"
     update:
       update_success_notice: "ユーザーを正常に更新!!!"
+      update_fail_notice: "ユーザーの更新に失敗しました"
     destroy:
       delete_success_notice: "ユーザーを正常に削除"
       delete_success_alert: "ユーザーの削除に失敗しました"
+    new:
+      not_access_notice: "アクセス権がありません"

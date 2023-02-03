@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_093428) do
     t.datetime "updated_at", null: false
     t.date "birthday"
     t.string "address"
-    t.boolean "admin", default: false
+    t.integer "role", default: 0
   end
 
 end

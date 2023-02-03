@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user_admin
-    redirect_to root_path, notice: t(".not_access_notice") if !User.find_by(id: session[:user_id]).admin? || User.find_by(id: params[:id]) != User.find_by(id: session[:user_id])
+    redirect_to root_path, notice: t(".not_access_notice") if !User.find_by(id: session[:user_id]).admin?
   end
 end
