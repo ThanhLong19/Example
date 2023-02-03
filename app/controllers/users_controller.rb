@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      render :new
+      render :new, alert: t(".create_fail_alert")
     end
   end
 
@@ -25,18 +25,14 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    if @user.admin?
-      get_user
-    else
-      @user = User.find_by(id: session[:user_id])
-    end
+    @user.admin? ? get_user : @user == current_user
   end
 
   def update
     if @user.update(user_params)
       redirect_to users_path, notice: t(".update_success_notice")
     else
-      render :edit
+      render :edit, alert: t(".update_fail_notice")
     end
   end
 
@@ -56,5 +52,6 @@ class UsersController < ApplicationController
 
   def get_user
     @user = User.find_by(id: params[:id])
+    redirect_to root_path, notice: "Users not found" if @user == nil
   end
 end

@@ -110,3 +110,7 @@ ja:
       address: "住所"
       password: "パスワード"
       password_confirmation: "パスワードの確認"
+      role: "役割"
+      admin: "管理者"
+      normal: "普通"
+      submit: "送信"
