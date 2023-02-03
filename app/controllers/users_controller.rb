@@ -24,8 +24,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @user.admin? ? get_user : @user == current_user
+    # @user = current_user
+    # binding.pry
+    @user = current_user.admin? ? get_user : current_user
   end
 
   def update
@@ -53,5 +54,6 @@ class UsersController < ApplicationController
   def get_user
     @user = User.find_by(id: params[:id])
     redirect_to root_path, notice: "Users not found" if @user == nil
+    @user
   end
 end
