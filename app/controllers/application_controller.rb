@@ -22,7 +22,13 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def current_user
+    if session[:user_id]
+      User.find_by(id: session[:user_id])
+    end
+  end
+
   def require_user_admin
-    redirect_to root_path, notice: t(".not_access_notice") if !User.find_by(id: session[:user_id]).admin?
+    redirect_to root_path, notice: t(".not_access_notice") if !current_user.admin?
   end
 end

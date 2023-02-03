@@ -52,6 +52,7 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # gem "pry-rails"
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
@@ -78,5 +79,5 @@ gem "figaro"
 gem "faker", "~> 3.1"
 gem "irb", "~> 1.6", ">= 1.6.2"
 
-# gem "pry-rails", "~> 0.3.9"
+gem "pry-rails", "~> 0.3.9"
 gem "rails-i18n", "~> 7.0", ">= 7.0.6"

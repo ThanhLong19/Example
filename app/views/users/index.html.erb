@@ -13,22 +13,22 @@
     <th><%= t(".action")%></th>
   </tr>
 
-  <% @listuser.each do |list| %>
+  <% @users.each do |users| %>
     <tr>
-      <td><%= list.name %></td>
-      <td><%= list.email %></td>
-      <td><%= list.birthday %></td>
-      <td><%= list.address %></td>
+      <td><%= users.name %></td>
+      <td><%= users.email %></td>
+      <td><%= users.birthday %></td>
+      <td><%= users.address %></td>
       <% if current_user.admin? %>
         <td>
-          <%= link_to t(".profile"), user_path(list), class: "btn btn-success" %>
-          <%= link_to t(".edit"), edit_user_path(list), class: "btn btn-success" %>
-          <%= button_to t(".delete"), user_path(list), method: :delete, class: "btn btn-danger" %>
+          <%= link_to t(".profile"), user_path(users), class: "btn btn-success" %>
+          <%= link_to t(".edit"), edit_user_path(users), class: "btn btn-success" %>
+          <%= button_to t(".delete"), user_path(users), method: :delete, class: "btn btn-danger" %>
         </td>  
       <% else %>
-        <% if current_user.id == list.id %>
+        <% if current_user.id == users.id %>
           <td>
-            <%= link_to t(".profile"), user_path(list), class: "btn btn-success" %>
+            <%= link_to t(".profile"), user_path(users), class: "btn btn-success" %>
           </td>
         <% end %>
       <% end %>  

@@ -92,6 +92,7 @@ ja:
       birthday: "お誕生日"
       address: "住所"
       not_access_notice: "アクセス権がありません"
+      not_found_users_notice: "ユーザーが見つかりません"
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
       create_fail_alert: "ユーザーの作成に失敗しました"
@@ -103,3 +104,9 @@ ja:
       delete_success_alert: "ユーザーの削除に失敗しました"
     new:
       not_access_notice: "アクセス権がありません"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @listuser = User.all
+    @users = User.all
   end
 
   def new
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      redirect_to new_user_path, alert: t(".create_fail_alert")
+      render :new
     end
   end
 
@@ -24,13 +24,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: session[:user_id])
+    @user = current_user
     if @user.admin?
       get_user
-    elsif !@user.admin? && User.find_by(id: session[:user_id]) == User.find_by(id: params[:id])
-      @user = User.find_by(id: session[:user_id])
     else
-      redirect_to root_path, notice: t(".not_access_notice")
+      @user = User.find_by(id: session[:user_id])
     end
   end
 
@@ -38,7 +36,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to users_path, notice: t(".update_success_notice")
     else
-      redirect_to edit_user_path, alert: t(".update_fail_notice")
+      render :edit
     end
   end
 
@@ -58,8 +56,5 @@ class UsersController < ApplicationController
 
   def get_user
     @user = User.find_by(id: params[:id])
-    if @user == nil
-      redirect_to root_path, notice: t(".not_found_users_notice")
-    end
   end
 end

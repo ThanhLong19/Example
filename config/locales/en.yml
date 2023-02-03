@@ -92,6 +92,7 @@ en:
       birthday: "Birthday"
       address: "Address"
       not_access_notice: "You do not have access"
+      not_found_users_notice: "Users not found"
     create:
       create_success_notice: "Create User successfully!!!"
       create_fail_alert: "Create User Failed"
@@ -103,3 +104,9 @@ en:
       delete_success_alert: "Delete User Failed"
     new:
       not_access_notice: "You do not have access"
+      name: "Name"
+      email: "Email"
+      birthday: "Birthday"
+      address: "Address"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
