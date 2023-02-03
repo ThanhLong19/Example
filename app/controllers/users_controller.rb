@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      render :new, alert: t(".create_fail_alert")
+      redirect_to new_user_path, alert: t(".create_fail_alert")
     end
   end
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to users_path, notice: t(".update_success_notice")
     else
-      render :edit, alert: t(".update_fail_notice")
+      redirect_to edit_user_path, alert: t(".update_fail_notice")
     end
   end
 
