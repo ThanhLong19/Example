@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
   def get_user
     @user = User.find_by(id: params[:id])
-    redirect_to root_path, notice: t(".not_found_users_notice") unless @user
+    redirect_to root_path, notice: "Users not found" unless @user
     @user
   end
 end
