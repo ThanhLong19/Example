@@ -4,56 +4,60 @@
     <%= edit.label t(".name"), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= edit.text_field :name, class: "form-control", placeholder: t(".name") %>
     <div class="messages_errors">
-      <% @user.errors.full_messages_for(:name).each do |messages|%>
-        <%= messages %>
-      <% end %>
-    </div>
-  </div>
-  <div class="mb-3">
-    <%= edit.label t(".email"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.email_field :email, class: "form-control", placeholder: "email@example.com" %>
-    <div class="messages_errors">
-      <% @user.errors.full_messages_for(:email).each do |messages|%>
-        <%= messages %>
-      <% end %>
-    </div>
-  </div>
-    <div class="mb-3">
-    <%= edit.label t(".birthday"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.date_field :birthday, class: "form-control", placeholder: t(".birthday") %>
-    <div class="messages_errors">
-      <% @user.errors.full_messages_for(:birthday).each do |messages|%>
-        <%= messages %>
-      <% end %>
-    </div>
-  </div>
-  <div class="mb-3">
-    <%= edit.label t(".address"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.text_field :address, class: "form-control", placeholder: t(".address") %>
-    <div class="messages_errors">
-      <% @user.errors.full_messages_for(:address).each do |messages|%>
-        <%= messages %>
-      <% end %>
-    </div>
-  </div>
-  <div class="mb-3">
-    <%= edit.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.password_field :password, class: "form-control", placeholder: t(".password") %>
-    <div class="messages_errors">
-      <% @user.errors.full_messages_for(:password).each do |messages|%>
-        <%= messages %>
-      <% end %>
-    </div>
-  </div>
-    <div class="mb-3">
-    <%= edit.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.password_field :password_confirmation, class: "form-control", placeholder: t(".password_confirmation") %>
-    <div class="messages_errors">
-      <% @user.errors.full_messages_for(:password).each do |messages|%>
-        <%= messages %>
+      <% @user.errors.full_messages_for(:name).each do |message|%>
+        <%= message %>
       <% end %>
     </div>
   </div>
 
+  <div class="mb-3">
+    <%= edit.label t(".email"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.email_field :email, class: "form-control", placeholder: "email@example.com" %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:email).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="mb-3">
+    <%= edit.label t(".birthday"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.date_field :birthday, class: "form-control", placeholder: t(".birthday") %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:birthday).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= edit.label t(".address"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.text_field :address, class: "form-control", placeholder: t(".address") %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:address).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= edit.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.password_field :password, class: "form-control", placeholder: t(".password") %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:password).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= edit.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= edit.password_field :password_confirmation, class: "form-control", placeholder: t(".password_confirmation") %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:password).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
+  </div>
   <%= edit.submit t(".submit"), class: "btn btn-success"  %>
 <% end %>
