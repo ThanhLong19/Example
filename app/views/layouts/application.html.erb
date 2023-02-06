@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-
 <head>
   <title>Example1</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -12,11 +12,10 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag "application" %>
+
 </head>
-
 <body>
-
   <%= render "layouts/navbar"%>
 
   <div class="container">
@@ -29,5 +28,4 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
 </body>
-
 </html>

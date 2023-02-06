@@ -15,4 +15,6 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :password, presence: true, length: { minimum: 6 }
+
+  enum :role, { user_normal: 0, admin: 1 }
 end

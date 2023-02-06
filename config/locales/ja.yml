@@ -72,6 +72,8 @@ ja:
       password_confirmation: "パスワードの確認"
       submit: "送信"
       require_user_logged_in_notice: "何をするにもログインする必要があります"
+      not_found_users_notice: "ユーザーが見つかりません"
+      not_access_notice: "アクセス権がありません"
     index:
       list_user: "ユーザーの一覧表示"
       create_user: "新しいユーザーを作成"
@@ -82,12 +84,33 @@ ja:
       action: "アクション"
       edit: "編集"
       delete: "消去"
+      profile: "プロフィール"
     show:
       profile_user: "プロファイル ユーザー"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      not_access_notice: "アクセス権がありません"
+      not_found_users_notice: "ユーザーが見つかりません"
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
+      create_fail_alert: "ユーザーの作成に失敗しました"
     update:
       update_success_notice: "ユーザーを正常に更新!!!"
+      update_fail_notice: "ユーザーの更新に失敗しました"
     destroy:
       delete_success_notice: "ユーザーを正常に削除"
       delete_success_alert: "ユーザーの削除に失敗しました"
+    new:
+      not_access_notice: "アクセス権がありません"
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      role: "役割"
+      admin: "管理者"
+      normal: "普通"
+      submit: "送信"

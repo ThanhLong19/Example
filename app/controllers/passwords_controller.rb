@@ -5,10 +5,10 @@ class PasswordsController < ApplicationController
   end
 
   def update
-    if Current.user.update(password_params)
+    if current_user.update(password_params)
       redirect_to root_path, notice: t(".update_success_notice")
     else
-      redirect_to edit_password_path, alert: Current.user.errors.full_messages
+      redirect_to edit_password_path, alert: current_user.errors.full_messages
     end
   end
 
