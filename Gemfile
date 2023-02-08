@@ -80,8 +80,3 @@ gem "irb", "~> 1.6", ">= 1.6.2"
 
 gem "pry-rails", "~> 0.3.9"
 gem "rails-i18n", "~> 7.0", ">= 7.0.6"
-gem "devise"
-
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'

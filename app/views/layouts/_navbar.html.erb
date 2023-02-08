@@ -25,9 +25,9 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       </ul>
       <% unless current_user %>
-        <%= button_to "Sign In", new_user_session_path, method: :get, class: "btn btn-success" %>
+        <%= button_to t(".sign_in"), new_session_path, method: :get, class: "btn btn-success" %>
       <% else %>
-        <%= button_to t(".logout"), destroy_user_session_path, method: :delete, class: "btn btn-success" %>
+        <%= button_to t(".logout"), session_path(current_user), method: :delete, class: "btn btn-success" %>
       <% end %>
       <div class="btn-group language">
         <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
