@@ -41,6 +41,11 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
+    add_column :users, :name, :string
+    add_column :users, :address, :string
+    add_column :users, :birthday, :date
+    add_column :users, :role, :integer
+    add_column :users, :provider, :string
   end
 
   def self.down
