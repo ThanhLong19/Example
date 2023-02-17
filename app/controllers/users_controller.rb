@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
   before_action :get_user, only: [:edit, :update, :destroy]
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
@@ -43,10 +43,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def connection
+    @user = User.new(email: params[:email])
+    if @user.save
+      redirect_to users_path, notice: t(".create_success_notice")
+    else
+      render :new, alert: t(".create_fail_alert")
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation, :role)
+    params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation, :role, :provider)
   end
 
   def get_user
