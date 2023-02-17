@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:admin_new, :admin_create, :edit, :update, :destroy]
+  before_action :require_user_logged_in
   before_action :get_user, only: [:edit, :update, :destroy]
   before_action :require_user_admin, only: [:admin_new, :admin_create, :edit, :update, :destroy]
 
@@ -40,20 +40,6 @@ class UsersController < ApplicationController
       redirect_to users_path, notice: t(".delete_success_notice")
     else
       redirect_to users_path, alert: t(".delete_success_alert")
-    end
-  end
-
-  def connection
-    @user = User.new(email: params[:email])
-  end
-
-  def connect_google
-    @user = User.new(user_params)
-    if @user.save
-      sign_in(:user, @user)
-      redirect_to root_path, notice: t(".create_success_notice")
-    else
-      render :connection, alert: t(".create_fail_alert")
     end
   end
 
