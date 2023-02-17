@@ -43,6 +43,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def connection
+    @user = User.new(email: params[:email])
+    if @user.save
+      redirect_to users_path, notice: t(".create_success_notice")
+    else
+      render :new, alert: t(".create_fail_alert")
+    end
+  end
+
   private
 
   def user_params
