@@ -16,9 +16,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :address, presence: true
 
-  has_secure_password
-
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
 
   enum :role, { user_normal: 0, admin: 1 }
 
