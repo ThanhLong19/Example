@@ -53,7 +53,6 @@ class UsersController < ApplicationController
       sign_in(:user, @user)
       redirect_to root_path, notice: t(".create_success_notice")
     else
-      binding.pry
       render :connection, alert: t(".create_fail_alert")
     end
   end
