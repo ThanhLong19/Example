@@ -22,7 +22,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def auth
-    auth ||= request.env["omniauth.auth"]
+    request.env["omniauth.auth"]
   end
 
   def require_login
