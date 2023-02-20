@@ -48,7 +48,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      render :new, alert: t(".create_fail_alert")
+      binding.pry
+      render :connection, alert: t(".create_fail_alert")
     end
   end
 

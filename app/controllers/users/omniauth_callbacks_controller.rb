@@ -19,13 +19,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  def google
-  end
-
   private
 
   def auth
-    @auth ||= request.env["omniauth.auth"]
+    auth ||= request.env["omniauth.auth"]
   end
 
   def require_login
