@@ -1,6 +1,5 @@
-<!-- <h1 class="title_h1"><%= t(".create_user") %></h1> -->
-<h1 class="title_h1">New Users</h1>
-<%= form_with model: @user, url: users_path, local: true do |new| %>
+<h1 class="title_h1"><%= t(".create_user") %></h1>
+<%= form_with model: @user, url: admin_create_users_path, local: true do |new| %>
   <div class="mb-3">
     <%= new.label t(".name"), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
@@ -61,5 +60,12 @@
     </div>
   </div>
 
+  <div class="mb-3">
+    <%= new.label t(".role"), for: "exampleDropdownFormPassword1"%></br>
+    <%= new.radio_button :role, "admin" %>
+    <%= new.label t(".admin"), for: "exampleDropdownFormPassword1" %>
+    <%= new.radio_button :role, "user_normal" %>
+    <%= new.label t(".normal"), for: "exampleDropdownFormPassword1" %>
+  </div>
   <%= new.submit t(".submit"), class: "btn btn-success"  %>
 <% end %>

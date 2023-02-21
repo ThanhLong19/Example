@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     collection do
       get :connection
       post :connect_google
+      get :admin_new
+      post :admin_create
     end
   end
 end
