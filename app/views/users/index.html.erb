@@ -1,5 +1,4 @@
 <h1 class="title_h1"><%= t(".list_user") %></h1>
-
 <% if current_user.admin? %>
   <%= link_to t(".create_user"), new_user_path, class: "btn btn-success", style: "margin-top: 50px" %>
 <% end %>

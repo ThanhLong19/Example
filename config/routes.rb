@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   }
 
   resources :users do
-    get :connection, on: :collection
+    collection do
+      get :connection
+      post :connect_google
+    end
   end
   resources :users
 end

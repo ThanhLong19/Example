@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:new, :create, :edit, :update, :destroy]
   before_action :get_user, only: [:edit, :update, :destroy]
   before_action :require_user_admin, only: [:admin_new, :admin_create, :edit, :update, :destroy]
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, notice: t(".create_success_notice")
     else
-      render :new
+      render :new, alert: t(".create_fail_alert")
     end
   end
 

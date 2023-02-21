@@ -1,24 +1,56 @@
-<h1 class="title_h1">Connect Google</h1>
+<h1 class="title_h1"><%= t(".connect_google") %></h1>
 
-<%= form_with model: @user, url: connection_google_users_path, local: true do |new| %>
+<%= form_with model: @user, url: connect_users_path, local: true do |new| %>
   <div class="mb-3">
-    <%= new.label t(".name"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
+    <%= new.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.text_field :name, class: "form-control", placeholder: "Name" %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:name).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
   </div>
 
   <div class="mb-3">
-    <%= new.label t(".address"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.text_field :address, class: "form-control", placeholder: t(".address") %>
+    <%= new.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.email_field :email, class: "form-control", placeholder: "Email" %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:email).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
   </div>
 
   <div class="mb-3">
-    <%= new.label t(".password"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.password_field :password, class: "form-control", placeholder: t(".password") %>
+    <%= new.label :birthday, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.date_field :birthday, class: "form-control", placeholder: "Address" %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:birthday).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
   </div>
 
   <div class="mb-3">
-    <%= new.label t(".password_confirmation"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.password_field :password_confirmation, class: "form-control", placeholder: t(".password_confirmation") %>
+    <%= new.label :address, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.text_field :address, class: "form-control", placeholder: "Address" %>
+    <div class="messages_errors">
+      <% @user.errors.full_messages_for(:address).each do |message|%>
+        <%= message %>
+      <% end %>
+    </div>
   </div>
-  <%= new.submit t(".submit"), class: "btn btn-success"  %>
+
+  <div class="mb-3">
+    <%= new.label :password, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.password_field :password, class: "form-control", placeholder: "Password" %>
+
+  </div>
+
+  <div class="mb-3">
+    <%= new.label :password_confirmation, for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+
+  </div>
+  <%= new.submit "Submit", class: "btn btn-success"  %>
 <% end %>
