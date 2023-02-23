@@ -12,7 +12,7 @@
 
   <div class="mb-3">
     <%= edit.label t(".email"), for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= edit.email_field :email, class: "form-control", placeholder: "email@example.com" %>
+    <%= edit.email_field :email, class: "form-control", placeholder: "email@example.com", readonly: true %>
     <div class="messages_errors">
       <% @user.errors.full_messages_for(:email).each do |message|%>
         <%= message %>

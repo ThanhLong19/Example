@@ -1,0 +1,15 @@
+<h1 class="title_h1"><%= t(".forget_password") %></h1>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mb-3">
+    <%= f.label t(".email") %><br />
+    <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t(".send_reset_password"), class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

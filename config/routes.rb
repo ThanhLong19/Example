@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|ja/ do
-    root "home#index"
+  root "home#index"
 
-    resources :sessions
+  devise_for :users, controllers: {
+    registraions: "users/registraions",
+    sessions: "users/sessions",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
-    resources :passwords
-
-    resources :password_resets, only: [:new, :create]
-    get "password/reset/edit", to: "password_resets#edit"
-    patch "password/reset/edit", to: "password_resets#update"
-
-    resources :users
+  resources :users do
+    collection do
+      get :connection
+      post :connect_google
+      get :admin_new
+      post :admin_create
+    end
   end
 end
