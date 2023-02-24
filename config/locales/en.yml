@@ -94,7 +94,7 @@ en:
       address: "Address"
       not_access_notice: "You do not have access"
       not_found_users_notice: "Users not found"
-    admin_create:
+    create:
       create_success_notice: "Create User successfully!!!"
       create_fail_alert: "Create User Failed"
     update:
@@ -103,7 +103,7 @@ en:
     destroy:
       delete_success_notice: "Delete User Successfully"
       delete_success_alert: "Delete User Failed"
-    admin_new:
+    new:
       not_access_notice: "You do not have access"
       name: "Name"
       email: "Email"

@@ -1,37 +1,37 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in,  only: [:index, :show , :new, :crete, :edit, :update, :destroy]
   before_action :get_user, only: [:edit, :update, :destroy]
-  before_action :require_user_admin, only: [:admin_new, :admin_create, :edit, :update, :destroy]
+  before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @users = User.all
-  end
-
-  def admin_new
-    @user = User.new
-  end
-
-  def admin_create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path, notice: t(".create_success_notice")
-    else
-      render :admin_new, alert: t(".create_fail_alert")
-    end
-  end
-
-  def edit
   end
 
   def show
     @user = current_user.admin? ? get_user : current_user
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to users_path, notice: t(".create_success_notice")
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
   def update
     if @user.update(user_params)
       redirect_to users_path, notice: t(".update_success_notice")
     else
-      render :edit, alert: t(".update_fail_notice")
+      render :edit
     end
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       sign_in(:user, @user)
       redirect_to root_path, notice: t(".create_success_notice")
     else
-      render :connection, alert: t(".create_fail_alert")
+      render :connection
     end
   end
 
