@@ -1,5 +1,5 @@
 <h1 class="title_h1"><%= t(".create_user") %></h1>
-<%= form_with model: @user, url: admin_create_users_path, local: true do |new| %>
+<%= form_with model: @user, url: users_path, local: true do |new| %>
   <div class="mb-3">
     <%= new.label t(".name"), for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
