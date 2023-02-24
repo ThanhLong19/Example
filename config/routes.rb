@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }, :skip => [:registrations]
 
+
   resources :users do
     collection do
       get :connection

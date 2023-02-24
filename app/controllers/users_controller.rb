@@ -1,22 +1,22 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show , :new, :crete, :edit, :update, :destroy]
+  before_action :require_user_logged_in
   before_action :get_user, only: [:edit, :update, :destroy]
-  before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_user_admin, only: [:admin_new, :admin_create, :edit, :update, :destroy]
 
   def index
     @users = User.all
   end
 
-  def new
+  def admin_new
     @user = User.new
   end
 
-  def create
+  def admin_create
     @user = User.new(user_params)
     if @user.save
       redirect_to root_path, notice: t(".create_success_notice")
     else
-      render :new, alert: t(".create_fail_alert")
+      render :admin_new, alert: t(".create_fail_alert")
     end
   end
 
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation, :role)
+    params.require(:user).permit(:name, :email, :birthday, :address, :password, :password_confirmation, :role, :provider)
   end
 
   def get_user
