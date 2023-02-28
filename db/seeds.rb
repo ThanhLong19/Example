@@ -7,7 +7,7 @@ User.create!(name: "Thành Long",
              role: 1)
 
 User.create!(name: "Long Phạm",
-             email: "longp2k1@gmail.com",
+             email: "long2k1@gmail.com",
              birthday: "2001-01-19",
              address: "Thanh Oai - Hà Nội",
              password: "long1901",

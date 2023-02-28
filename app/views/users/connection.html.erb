@@ -1,6 +1,6 @@
 <h1 class="title_h1"><%= t(".connect_google") %></h1>
 
-<%= form_with model: @user, url: connect_users_path, local: true do |new| %>
+<%= form_with model: @user, url: connect_google_users_path, local: true do |new| %>
   <div class="mb-3">
     <%= new.label :name, for: "exampleDropdownFormPassword1", class: "form-label" %>
     <%= new.text_field :name, class: "form-control", placeholder: "Name" %>
@@ -13,7 +13,7 @@
 
   <div class="mb-3">
     <%= new.label :email, for: "exampleDropdownFormPassword1", class: "form-label" %>
-    <%= new.email_field :email, class: "form-control", placeholder: "Email" %>
+    <%= new.email_field :email, class: "form-control", placeholder: "Email", readonly: true %>
     <div class="messages_errors">
       <% @user.errors.full_messages_for(:email).each do |message|%>
         <%= message %>
