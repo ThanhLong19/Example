@@ -85,6 +85,7 @@ en:
       edit: "Edit"
       delete: "Delete"
       profile: "Profile"
+      require_user_logged_in_notice: "You must be logged in to do what"
     show:
       profile_user: "Profile User"
       name: "Name"
@@ -93,7 +94,8 @@ en:
       address: "Address"
       not_access_notice: "You do not have access"
       not_found_users_notice: "Users not found"
-    admin_create:
+      require_user_logged_in_notice: "You must be logged in to do what"
+    create:
       create_success_notice: "Create User successfully!!!"
       create_fail_alert: "Create User Failed"
     update:
@@ -102,7 +104,7 @@ en:
     destroy:
       delete_success_notice: "Delete User Successfully"
       delete_success_alert: "Delete User Failed"
-    admin_new:
+    new:
       not_access_notice: "You do not have access"
       name: "Name"
       email: "Email"
@@ -114,6 +116,7 @@ en:
       admin: "Admin"
       normal: "Normal"
       submit: "Submit"
+      require_user_logged_in_notice: "You must be logged in to do what"
     connect_google:
       create_success_notice: "Create User successfully!!!"
     connection:

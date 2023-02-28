@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
@@ -16,5 +18,4 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def auth
     request.env["omniauth.auth"]
   end
-
 end
