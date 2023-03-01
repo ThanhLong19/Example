@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
-  has_many :projects, through: :projects_members
-  has_many :projects_members
+  has_many :projects, through: :project_members
+  has_many :project_members
+
+  validates :name, presence: true, length: { maximum: 50 }
 end
