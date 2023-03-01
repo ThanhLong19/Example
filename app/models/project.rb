@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   has_many :members, through: :project_members
-  has_many :project_members
+  has_many :project_members, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :estimate_time, presence: true
