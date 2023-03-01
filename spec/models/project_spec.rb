@@ -9,28 +9,26 @@ RSpec.describe Project, type: :model do
   end
 
   describe "validate" do
-    before(:each) do 
-      @project = Project.create!(name: "Long", estimate_time: 4, owner: "Long")
+
+    it "check presence of name" do
+      should validate_presence_of(:name)
     end
 
-    it "check blank of name" do
-      @project.name = ""
-      expect(@project).to_not be_valid
+    it "check presence of estimate_time" do
+      should validate_presence_of(:estimate_time)
+    end
+
+    it "check presence of owner" do
+      should validate_presence_of(:owner)
     end
 
     it "check length of name" do
-      @project.name = "a"*51
-      expect(@project).to_not be_valid
-    end
-
-    it "check blank of owner" do
-      @project.owner = ""
-      expect(@project).to_not be_valid
+      should validate_length_of(:name).is_at_most(50)
     end
 
     it "check length of owner" do
-      @project.owner = "a"*51
-      expect(@project).to_not be_valid
+      should validate_length_of(:owner).is_at_most(50)
     end
+
   end  
 end

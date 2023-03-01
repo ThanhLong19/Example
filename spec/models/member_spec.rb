@@ -9,18 +9,12 @@ RSpec.describe Member, type: :model do
   end
 
   describe "validate" do
-    before(:each) do 
-      @member = Member.create!(name: "Long")
-    end
-
-    it "check blank of name" do
-      @member.name = ""
-      expect(@member).to_not be_valid
+    it "check presence of name" do
+      should validate_presence_of(:name)
     end
 
     it "check length of name" do
-      @member.name = "a"*51
-      expect(@member).to_not be_valid
+      should validate_length_of(:name).is_at_most(50)
     end
   end
 end
