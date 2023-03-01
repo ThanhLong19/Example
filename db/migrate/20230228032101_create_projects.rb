@@ -13,8 +13,9 @@ class CreateProjects < ActiveRecord::Migration[7.0]
     end
 
     create_table :project_members do |t|
-      t.integer :project_id, index: { unique: true}
-      t.integer :member_id, index: { unique: true}
+      t.integer :project_id
+      t.integer :member_id
+      t.index [:project_id, :member_id], unique: true
       t.timestamps
     end
   end

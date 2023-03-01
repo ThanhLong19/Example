@@ -22,8 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_032101) do
     t.integer "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_project_members_on_member_id", unique: true
-    t.index ["project_id"], name: "index_project_members_on_project_id", unique: true
+    t.index ["project_id", "member_id"], name: "index_project_members_on_project_id_and_member_id", unique: true
   end
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
