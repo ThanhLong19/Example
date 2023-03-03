@@ -129,3 +129,38 @@ ja:
   projects:
     index:
       require_user_logged_in_notice: "何をするにもログインする必要があります"
+      list_project: "リスト プロジェクト"
+      create_project: "プロジェクトを作成"
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      action: "アクション"
+      watch: "時計"
+      edit: "編集"
+      delete: "消去"
+    new:
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"
+      not_access_notice: "アクセス権がありません"
+    create:
+      create_success_notice: "プロジェクトの作成に成功!!!"
+    show:
+      not_found_project_alert: "プロジェクトが見つかりません"
+    edit:
+      edit_project: "プロジェクトを編集"
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"
+    update:
+      update_success_notice: "プロジェクトを正常に更新!!!"
+    destroy:
+      delete_success_notice: "プロジェクトを削除しました!!!"
+      delete_success_alert: "プロジェクトの削除に失敗しました!!!"
+    form:
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"

@@ -2,15 +2,14 @@ class ProjectsController < ApplicationController
 
   before_action :require_user_logged_in
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy] 
-  before_action :get_project, only: [:edit, :update, :destroy]
-  before_action :get_list_member, only: [:new, :create]
+  before_action :get_project, only: [:edit, :update, :destroy, :show]
+  before_action :get_list_member, only: [:new, :create, :edit, :update]
 
   def index
     @projects = Project.all
   end
 
   def show
-    @project = Project.find_by(id: params[:id])
     if @project
       @project_members = Project.where(id: @project.id).first.project_members
     else
@@ -20,7 +19,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.project_members.build
   end
 
   def create
@@ -62,6 +60,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :estimate_time, :owner, project_members_attributes: [:member_id])
+      params.require(:project).permit(:name, :estimate_time, :owner, project_members_attributes: [:product_id, :member_id])
     end
 end

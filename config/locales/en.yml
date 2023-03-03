@@ -159,3 +159,8 @@ en:
     destroy:
       delete_success_notice: "Delete Project Successfully!!!"
       delete_success_alert: "Delete Project Failed!!!"
+    form:
+      name: "Name"
+      estimate_time: "Estimate Time"
+      owner: "Owner"
+      submit: "Submit"

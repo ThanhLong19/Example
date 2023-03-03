@@ -9,6 +9,7 @@
     <th><%= t(".name") %></th>
     <th><%= t(".estimate_time") %></th>
     <th><%= t(".owner") %></th>
+    <th><%= t(".member") %></th>
     <th class="tr_th"><%= t(".action") %></th>
   </tr>
   <% @projects.each do |project| %>
@@ -16,6 +17,11 @@
       <td><%= project.name %></td>
       <td><%= project.estimate_time %> Month</td>
       <td><%= project.owner %></td>
+      <td>
+        <% Project.where(id: project.id).first.project_members.each do |member| %>
+          <%= list_member = Member.find_by(id: member.member_id).name %>
+        <% end %>
+      </td>
       <% if current_user.admin? %>
         <td class="tr_td">
           <%= link_to t(".watch"), project_path(project), class: "btn btn-success" %>
