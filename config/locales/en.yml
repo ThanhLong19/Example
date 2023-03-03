@@ -164,3 +164,23 @@ en:
       estimate_time: "Estimate Time"
       owner: "Owner"
       submit: "Submit"
+  members:
+    index:
+      create_member: "Create new Member"
+      id: "ID"
+      name: "Name"
+      action: "Action"
+      watch: "Watch"
+      edit: "Edit"
+      delete: "Delete"
+    new:
+      create_member: "Create new Member"
+    form:
+      name: "Name"
+      submit: "Submit"
+    show:
+      profile: "Profile"
+      id: "ID"
+      name: "Name"
+    create:
+      create_success_notice: "Create Member Successfully"
