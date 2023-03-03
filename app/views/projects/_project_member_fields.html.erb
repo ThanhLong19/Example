@@ -1,0 +1,7 @@
+<%= f.label "Member ID", class: "form-label" %>
+<%= f.text_field :member_id, class: "form-control" %>
+<div class="messages_errors">
+  <% @project.errors.full_messages_for(:"project_members.member").each do |message|%>
+    <%= message %>
+  <% end %>
+</div>

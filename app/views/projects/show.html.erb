@@ -1,0 +1,32 @@
+<h1 class="title_h1">Profile Project</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td><%= @project.name %></td>
+  </tr>
+  <tr>
+    <th>Estimate_time</th>
+    <td><%= @project.estimate_time %></td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td><%= @project.owner %></td>
+  </tr>
+</table>
+
+<h4 class="title_h1">Member of Project</h4>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th class="tr_th"><%= t(".action") %></th>
+  </tr>
+  <% @project_members.each do |member| %>
+    <tr>
+      <td><%= Member.find_by(id: member.member_id).name %></td>
+      <td class="tr_td">
+        <%= link_to t(".watch"), root_path, class: "btn btn-success"%>
+      </td>
+    </tr>
+  <% end %>
+</table>

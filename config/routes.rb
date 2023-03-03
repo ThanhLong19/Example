@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       post :connect_google
     end
   end
+
+  resources :projects
 end

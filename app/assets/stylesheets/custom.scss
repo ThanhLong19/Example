@@ -32,3 +32,15 @@
 .messages_errors{
   color: red;  
 }
+.table{
+  .tr_th{
+    text-align: center;
+  }
+  .tr_td{
+    display: flex;
+    justify-content: center;
+    a{
+      margin: 0 10px;
+    }
+  }
+}
