@@ -184,3 +184,8 @@ ja:
       name: "名前"
     create:
       create_success_notice: "メンバーの作成に成功"
+    update:
+      update_success_notice: "メンバーを更新しました!!!"
+    destroy:
+      delete_success_notice: "メンバーを削除しました!!!"
+      delete_success_alert: "メンバーの削除に失敗しました!!!"

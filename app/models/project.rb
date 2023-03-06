@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
-  has_many :members, through: :project_members
   has_many :project_members, dependent: :destroy
+  has_many :members, through: :project_members
 
   accepts_nested_attributes_for :project_members, :allow_destroy => true, reject_if: proc { |attributes| attributes['member_id'] == "0" }
 

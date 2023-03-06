@@ -184,3 +184,8 @@ en:
       name: "Name"
     create:
       create_success_notice: "Create Member Successfully"
+    update:
+      update_success_notice: "Update member successfully!!!"
+    destroy:
+      delete_success_notice: "Delete member successfully!!!"
+      delete_success_alert: "Delete member failed!!!"

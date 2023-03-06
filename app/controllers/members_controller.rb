@@ -36,10 +36,10 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    if @project.destroy
-      redirect_to projects_path, notice: t(".delete_success_notice")
+    if @member.destroy
+      redirect_to members_path, notice: t(".delete_success_notice")
     else
-      redirect_to projects_path, alert: t(".delete_success_alert")
+      redirect_to members_path, alert: t(".delete_success_alert")
     end
   end
 
