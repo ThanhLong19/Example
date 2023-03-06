@@ -29,26 +29,19 @@
     </div>
   </div>
 
+
+
   <div class="members mb-3">
     <div class="title_member">
       Select Member to Project
     </div>
     <div class="list_member mb-3">
-      <% @members.each do |member| %>
-          <div class="mb-3">
-            <%= new.fields_for :project_members, @project.project_members.build do |f| %>
-                <%= f.check_box :member_id, {mutiple: true}, member.id, 0 %>
-                <%= f.label member.name %>
-              <div class="messages_errors">
-                <% @project.errors.full_messages_for(:"project_members.member").each do |message|%>
-                  <%= message %>
-                <% end %>
-              </div>
-            <% end %>  
-          </div>  
-      <% end %> 
+      <% Member.all.each do |member| %>
+        <%= check_box_tag "members_ids[]", member.id, @project.member_ids.include?(member.id) %>
+        <%= member.name %></br>
+      <% end %>
     </div>
-  </div>
+  </div>  
 
   <%= new.submit t(".submit"), class: "btn btn-success"  %>
 <% end %>

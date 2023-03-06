@@ -182,6 +182,7 @@ en:
       profile: "Profile"
       id: "ID"
       name: "Name"
+      not_found_member: "Not found member"
     create:
       create_success_notice: "Create Member Successfully"
     update:

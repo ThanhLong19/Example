@@ -9,6 +9,11 @@ class MembersController < ApplicationController
   end
 
   def show
+    if @member.present?
+      redirect_to members_path(@member.id)
+    else
+      redirect_to root_path, notice: t(".not_found_member")
+    end
   end
 
   def new
