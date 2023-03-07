@@ -1,18 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :require_user_logged_in
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy] 
-  before_action :get_project, only: [:edit, :update, :destroy, :show]
+  before_action :set_project, only: [:edit, :update, :destroy, :show]
 
   def index
-    @projects = Project.all
+    @projects = Project.all.page(params[:page]).per(10)
   end
 
 	def show
-    if @project.present?
-      @project_members = Project.where(id: @project.id).first.project_members
-    else
-      redirect_to root_path, notice: t(".not_found_project_alert")
-    end
   end
 
   def new
@@ -50,8 +45,8 @@ class ProjectsController < ApplicationController
 
   private
 
-	  def get_project
-      @project = Project.find_by(id: params[:id])
+	  def set_project
+      @project = Project.find(params[:id])
     end
 
     def project_params

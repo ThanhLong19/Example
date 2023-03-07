@@ -1,19 +1,14 @@
 class MembersController < ApplicationController 
 
   before_action :require_user_logged_in
-  before_action :get_member, only: [:show, :edit, :update, :destroy]
+  before_action :set_member, only: [:show, :edit, :update, :destroy]
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @members = Member.all
+    @members = Member.all.page(params[:page]).per(10)
   end
 
   def show
-    if @member.present?
-      get_member
-    else
-      redirect_to root_path, notice: t(".not_found_member")
-    end
   end
 
   def new
@@ -54,8 +49,7 @@ class MembersController < ApplicationController
       params.require(:member).permit(:name)
     end
 
-    def get_member
-      @member = Member.find_by(id: params[:id])
+    def set_member
+      @member = Member.find(params[:id])
     end
-
 end

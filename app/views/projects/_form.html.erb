@@ -1,35 +1,21 @@
 <%= form_for @project do |new| %>
+  <div class="messages_errors">
+    <%= render "shared/error_message", object: @project %>
+  </div>
   <div class="mb-3">
-    <%= new.label t(".name"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.label t(".name"), class: "form-label" %>
     <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
-    <div class="messages_errors">
-      <% @project.errors.full_messages_for(:name).each do |message|%>
-        <%= message %>
-      <% end %>
-    </div>
   </div>
 
   <div class="mb-3">
-    <%= new.label t(".estimate_time"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.label t(".estimate_time"), class: "form-label" %>
     <%= new.text_field :estimate_time, class: "form-control", placeholder: t(".estimate_time") %>
-    <div class="messages_errors">
-      <% @project.errors.full_messages_for(:estimate_time).each do |message|%>
-        <%= message %>
-      <% end %>
-    </div>
   </div>
 
   <div class="mb-3">
-    <%= new.label t(".owner"), for: "exampleDropdownFormPassword1", class: "form-label" %>
+    <%= new.label t(".owner"), class: "form-label" %>
     <%= new.text_field :owner, class: "form-control", placeholder: t(".owner") %>
-    <div class="messages_errors">
-      <% @project.errors.full_messages_for(:owner).each do |message|%>
-        <%= message %>
-      <% end %>
-    </div>
   </div>
-
-
 
   <div class="members mb-3">
     <div class="title_member">
