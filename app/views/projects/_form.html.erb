@@ -36,8 +36,9 @@
       Select Member to Project
     </div>
     <div class="list_member mb-3">
+      <% hidden_field_tag "project[member_ids][]", nil %>
       <% Member.all.each do |member| %>
-        <%= check_box_tag "members_ids[]", member.id, @project.member_ids.include?(member.id) %>
+        <%= check_box_tag "project[member_ids][]", member.id, @project.member_ids.include?(member.id) %>
         <%= member.name %></br>
       <% end %>
     </div>

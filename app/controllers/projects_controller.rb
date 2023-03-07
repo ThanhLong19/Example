@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
     if @project.present?
       @project_members = Project.where(id: @project.id).first.project_members
     else
-      redirect_to root_path, notice: t(".not_found_project")
+      redirect_to root_path, notice: t(".not_found_project_alert")
     end
   end
 
@@ -21,8 +21,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.member_ids = params[:member_ids]
-    binding.pry
     if @project.save
       redirect_to projects_path, notice: t(".create_success_notice")
     else
@@ -57,6 +55,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :estimate_time, :owner, project_members_attributes: [:product_id, :member_id])
+      params.require(:project).permit(:name, :estimate_time, :owner, member_ids: [])
     end
 end

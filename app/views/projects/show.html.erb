@@ -25,7 +25,7 @@
     <tr>
       <td><%= Member.find_by(id: member.member_id).name %></td>
       <td class="tr_td">
-        <%= link_to t(".watch"), root_path, class: "btn btn-success"%>
+        <%= link_to t(".watch"), member_path(member.member_id), class: "btn btn-success"%>
       </td>
     </tr>
   <% end %>

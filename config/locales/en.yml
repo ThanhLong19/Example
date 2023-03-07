@@ -154,11 +154,13 @@ en:
       estimate_time: "Estimate Time"
       owner: "Owner"
       submit: "Submit"
+      not_access_notice: "You do not have access"
     update:
       update_success_notice: "Update Project Successfully!!!"
     destroy:
       delete_success_notice: "Delete Project Successfully!!!"
       delete_success_alert: "Delete Project Failed!!!"
+      not_access_notice: "You do not have access"
     form:
       name: "Name"
       estimate_time: "Estimate Time"
@@ -175,6 +177,7 @@ en:
       delete: "Delete"
     new:
       create_member: "Create new Member"
+      not_access_notice: "You do not have access"
     form:
       name: "Name"
       submit: "Submit"
@@ -185,8 +188,11 @@ en:
       not_found_member: "Not found member"
     create:
       create_success_notice: "Create Member Successfully"
+    edit:
+      not_access_notice: "You do not have access"
     update:
       update_success_notice: "Update member successfully!!!"
     destroy:
       delete_success_notice: "Delete member successfully!!!"
       delete_success_alert: "Delete member failed!!!"
+      not_access_notice: "You do not have access"

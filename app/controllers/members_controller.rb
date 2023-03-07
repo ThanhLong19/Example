@@ -10,7 +10,7 @@ class MembersController < ApplicationController
 
   def show
     if @member.present?
-      redirect_to members_path(@member.id)
+      get_member
     else
       redirect_to root_path, notice: t(".not_found_member")
     end
