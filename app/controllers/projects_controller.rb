@@ -1,11 +1,13 @@
 class ProjectsController < ApplicationController
 
+  PER_PAGE = 10
+
   before_action :require_user_logged_in
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy] 
   before_action :set_project, only: [:edit, :update, :destroy, :show]
 
   def index
-    @projects = Project.all.page(params[:page]).per(set_per_page)
+    @projects = Project.all.page(params[:page]).per(PER_PAGE)
   end
 
 	def show
@@ -52,9 +54,5 @@ class ProjectsController < ApplicationController
 
     def project_params
       params.require(:project).permit(:name, :estimate_time, :owner, member_ids: [])
-    end
-
-    def set_per_page
-      per_page = 5
     end
 end

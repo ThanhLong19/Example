@@ -1,11 +1,13 @@
 class MembersController < ApplicationController 
 
+  PER_PAGE = 10
+
   before_action :require_user_logged_in
   before_action :set_member, only: [:show, :edit, :update, :destroy]
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @members = Member.all.page(params[:page]).per(set_per_page)
+    @members = Member.all.page(params[:page]).per(PER_PAGE)
   end
 
   def show
