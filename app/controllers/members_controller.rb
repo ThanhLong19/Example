@@ -54,8 +54,4 @@ class MembersController < ApplicationController
     def set_member
       @member = Member.find(params[:id])
     end
-
-    def set_per_page
-      per_page = 5
-    end
 end
