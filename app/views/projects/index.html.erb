@@ -1,0 +1,39 @@
+<h1 class="title_h1"><%= t(".list_project") %></h1>
+
+<% if current_user.admin? %>
+  <%= link_to t(".create_project"), new_project_path, class: "btn btn-success", style: "margin-top: 50px" %>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th><%= t(".name") %></th>
+    <th><%= t(".estimate_time") %></th>
+    <th><%= t(".owner") %></th>
+    <th><%= t(".member") %></th>
+    <th class="tr_th"><%= t(".action") %></th>
+  </tr>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.name %></td>
+      <td><%= project.estimate_time %> Month</td>
+      <td><%= project.owner %></td>
+      <td>
+        <% Project.where(id: project.id).first.project_members.each do |member| %>
+          <%= list_member = Member.find_by(id: member.member_id).name %>
+        <% end %>
+      </td>
+      <% if current_user.admin? %>
+        <td class="tr_td">
+          <%= link_to t(".watch"), project_path(project), class: "btn btn-success" %>
+          <%= link_to t(".edit"), edit_project_path(project), class: "btn btn-success" %>
+          <%= button_to t(".delete"), project_path(project),method: :delete,  class: "btn btn-danger" %>
+          </td>  
+      <% else %>
+        <td class="tr_td">
+          <%= link_to t(".watch"), project_path(project), class: "btn btn-success" %> 
+        </td>  
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @projects %>

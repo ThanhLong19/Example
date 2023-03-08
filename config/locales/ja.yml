@@ -85,6 +85,7 @@ ja:
       edit: "編集"
       delete: "消去"
       profile: "プロフィール"
+      require_user_logged_in_notice: "何をするにもログインする必要があります"
     show:
       profile_user: "プロファイル ユーザー"
       name: "名前"
@@ -93,6 +94,7 @@ ja:
       address: "住所"
       not_access_notice: "アクセス権がありません"
       not_found_users_notice: "ユーザーが見つかりません"
+      require_user_logged_in_notice: "何をするにもログインする必要があります"
     create:
       create_success_notice: "ユーザーの作成に成功しました!!!"
       create_fail_alert: "ユーザーの作成に失敗しました"
@@ -114,3 +116,76 @@ ja:
       admin: "管理者"
       normal: "普通"
       submit: "送信"
+      require_user_logged_in_notice: "何をするにもログインする必要があります"
+    connect_google:
+      create_success_notice: "ユーザーの作成に成功しました!!!"
+    connection:
+      name: "名前"
+      email: "Eメール"
+      birthday: "お誕生日"
+      address: "住所"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+  projects:
+    index:
+      require_user_logged_in_notice: "何をするにもログインする必要があります"
+      list_project: "リスト プロジェクト"
+      create_project: "プロジェクトを作成"
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      action: "アクション"
+      watch: "時計"
+      edit: "編集"
+      delete: "消去"
+    new:
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"
+      not_access_notice: "アクセス権がありません"
+    create:
+      create_success_notice: "プロジェクトの作成に成功!!!"
+    show:
+      not_found_project_alert: "プロジェクトが見つかりません"
+    edit:
+      edit_project: "プロジェクトを編集"
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"
+    update:
+      update_success_notice: "プロジェクトを正常に更新!!!"
+    destroy:
+      delete_success_notice: "プロジェクトを削除しました!!!"
+      delete_success_alert: "プロジェクトの削除に失敗しました!!!"
+    form:
+      name: "名前"
+      estimate_time: "見積もり時間"
+      owner: "オーナー"
+      submit: "送信"
+  members:
+    index:
+      create_member: "新しいメンバーを作成"
+      id: "ID"
+      name: "名前"
+      action: "アクション"
+      watch: "時計"
+      edit: "編集"
+      delete: "消去"
+    new:
+      create_member: "新しいメンバーを作成"
+    form:
+      name: "名前"
+      submit: "送信"
+    show:
+      profile: "プロフィール"
+      id: "ID"
+      name: "名前"
+    create:
+      create_success_notice: "メンバーの作成に成功"
+    update:
+      update_success_notice: "メンバーを更新しました!!!"
+    destroy:
+      delete_success_notice: "メンバーを削除しました!!!"
+      delete_success_alert: "メンバーの削除に失敗しました!!!"

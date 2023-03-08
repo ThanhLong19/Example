@@ -1,0 +1,40 @@
+<%= form_for @project do |new| %>
+  <div class="mb-3">
+    <%= new.label t(".name"), class: "form-label" %>
+    <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
+    <div class="messages_errors">
+      <%= render "shared/error_message", object: @project, field: :name %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= new.label t(".estimate_time"), class: "form-label" %>
+    <%= new.text_field :estimate_time, class: "form-control", placeholder: t(".estimate_time") %>
+    <div class="messages_errors">
+      <%= render "shared/error_message", object: @project, field: :estimate_time %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= new.label t(".owner"), class: "form-label" %>
+    <%= new.text_field :owner, class: "form-control", placeholder: t(".owner") %>
+    <div class="messages_errors">
+      <%= render "shared/error_message", object: @project, field: :owner %>
+    </div>
+  </div>
+
+  <div class="members mb-3">
+    <div class="title_member">
+      Select Member to Project
+    </div>
+    <div class="list_member mb-3">
+      <% hidden_field_tag "project[member_ids][]", nil %>
+      <% Member.all.each do |member| %>
+        <%= check_box_tag "project[member_ids][]", member.id, @project.member_ids.include?(member.id) %>
+        <%= member.name %></br>
+      <% end %>
+    </div>
+  </div>  
+
+  <%= new.submit t(".submit"), class: "btn btn-success"  %>
+<% end %>

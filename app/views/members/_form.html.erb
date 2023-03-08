@@ -1,0 +1,12 @@
+<%= form_for @member do |new| %>
+
+  <div class="mb-3">
+    <%= new.label t(".name"), class: "form-label" %>
+    <%= new.text_field :name, class: "form-control", placeholder: t(".name") %>
+    <div class="messages_errors">
+      <%= render "shared/error_message", object: @member, field: :name %>
+    </div>
+  </div>
+  <%= new.submit t(".submit"), class: "btn btn-success"  %>
+<% end %>
+

@@ -1,23 +1,23 @@
-.title_h1{
+.title_h1 {
   margin-top: 80px;
   text-align: center;  
 }
 
-.table{
+.table {
   margin-top: 50px;  
 }
 
-.language{
+.language {
   margin-left: 20px;
   margin-right: 30px;
-  ul{
+  ul {
     text-align: center;
-    li{
+    li {
       margin: 5px 0;
       padding: 5px 0;
       &:hover {
           background-color: black;
-          a{
+          a {
             color: white;
           }
         }
@@ -29,6 +29,99 @@
   }
 }
 
-.messages_errors{
+.messages_errors {
   color: red;  
+}
+.table {
+  .tr_th {
+    text-align: center;
+  }
+  .tr_td {
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 0 10px;
+    }
+  }
+}
+
+.members {
+  display: flex;
+  .list_member{
+    margin-left: 100px;
+  }
+}
+
+.pagination {
+  .page {
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    &:hover {
+      background-color: darkgray;
+      color: white
+    }
+    a {
+      text-decoration: none;
+      color: gray
+    }
+  }
+  .next {
+    padding: 5px 15px;
+    &:hover {
+      background-color: gray;
+      color: white
+    }
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+  .last {
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: gray;
+      color: white
+    }
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .first {
+    padding: 5px 15px;
+    &:hover {
+      background-color: gray;
+      color: white
+    }
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+  .prev {
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: gray;
+      color: white
+    }
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }

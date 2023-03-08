@@ -1,0 +1,31 @@
+<h1 class="title_h1"><%= t(".list_member") %></h1>
+
+<% if current_user.admin? %>
+  <%= link_to t(".create_member"), new_member_path, class: "btn btn-success", style: "margin-top: 50px" %>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th><%= t(".id") %></th>
+    <th><%= t(".name") %></th>
+    <th class="tr_th"><%= t(".action") %></th>
+  </tr>
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= member.id %></td>
+      <td><%= member.name %></td>
+      <% if current_user.admin? %>
+        <td class="tr_td">
+          <%= link_to t(".watch"), member_path(member), class: "btn btn-success" %>
+          <%= link_to t(".edit"), edit_member_path(member), class: "btn btn-success" %>
+          <%= button_to t(".delete"), member_path(member),method: :delete,  class: "btn btn-danger" %>
+          </td>  
+      <% else %>
+        <td class="tr_td">
+          <%= link_to t(".watch"), member_path(member), class: "btn btn-success" %> 
+        </td>  
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @members %>
