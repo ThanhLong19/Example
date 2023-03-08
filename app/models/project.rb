@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :estimate_time, presence: true
   validates :owner, presence: true, length: { maximum: 50 }
+
 end

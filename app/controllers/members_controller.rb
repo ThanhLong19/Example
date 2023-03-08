@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   before_action :require_user_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @members = Member.all.page(params[:page]).per(10)
+    @members = Member.all.page(params[:page]).per(set_per_page)
   end
 
   def show
@@ -51,5 +51,9 @@ class MembersController < ApplicationController
 
     def set_member
       @member = Member.find(params[:id])
+    end
+
+    def set_per_page
+      per_page = 5
     end
 end
