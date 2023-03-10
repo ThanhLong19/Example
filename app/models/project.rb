@@ -6,4 +6,11 @@ class Project < ApplicationRecord
   validates :estimate_time, presence: true
   validates :owner, presence: true, length: { maximum: 50 }
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "name", "owner"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["members"]
+  end
 end

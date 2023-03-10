@@ -7,7 +7,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:edit, :update, :destroy, :show]
 
   def index
-    @projects = Project.all.page(params[:page]).per(PER_PAGE)
+    @q = Project.ransack(params[:q])
+    @projects = @q.result.page(params[:page]).per(PER_PAGE)
   end
 
 	def show
