@@ -4,9 +4,7 @@
     <%= f.search_field :name_or_owner_or_members_name_cont, class: "form-control" %>
     <br/>
     Sort
-    <%= f.select :s, options_for_select([["---Choose---", ""],['Name ASC','name asc'],['Name DESC','name desc'],
-    ['Owner ASC','owner asc'],['Owner DESC','owner desc'],
-    ['Newest ASC','created_at asc'],['Newest DESC','created_at desc']]) %>
+    <%= f.select :s, options_for_select(link_options_sort) %>
     <br/><br/>
     <%= f.submit "Search" %>
   <% end %>
