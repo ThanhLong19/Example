@@ -8,7 +8,8 @@ class ProjectsController < ApplicationController
 
   def index
     @q = Project.ransack(params[:q])
-    @projects = @q.result.page(params[:page]).per(PER_PAGE)
+    @q.sorts = params.dig(:q, :s) || 'id asc'
+    @projects = @q.result(distinct: true).page(params[:page]).per(PER_PAGE)
   end
 
 	def show
@@ -56,4 +57,5 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:name, :estimate_time, :owner, member_ids: [])
     end
+
 end
