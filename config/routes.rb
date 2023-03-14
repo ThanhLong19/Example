@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }, :skip => [:registrations]
 
-
   resources :users do
     collection do
       get :connection
@@ -19,7 +18,10 @@ Rails.application.routes.draw do
   resources :projects
   resources :members
 
+  resources :tasks
+
   match "/404", to: "errors#file_not_found", via: :all
   match "/422", to: "errors#unprocessable'", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
+
 end

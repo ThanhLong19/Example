@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    binding.pry
     if @project.save
       redirect_to projects_path, notice: t(".create_success_notice")
     else
@@ -55,7 +56,7 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :estimate_time, :owner, member_ids: [])
+      params.require(:project).permit(:name, :estimate_time, :owner, member_ids: [], tasks_attributes: [:content])
     end
 
 end

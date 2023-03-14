@@ -36,5 +36,16 @@
     </div>
   </div>  
 
+  <div class="members mb-3">
+    <div class="title_task">
+      Task of Project
+    </div>
+    <div class="list_member mb-3">
+      <% Task.all.each do |task| %>
+        <%= task.content %>
+      <% end %>
+    </div>
+  </div> 
+
   <%= new.submit t(".submit"), class: "btn btn-success"  %>
 <% end %>
